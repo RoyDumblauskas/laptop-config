@@ -1,0 +1,16 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[Print]
+PrintHeight=19.42
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/image0.png
+Name1[$e]=image0.png
+
+[SideBar]
+InformationSplitterSizes=206,247
