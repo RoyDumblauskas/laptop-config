@@ -16,23 +16,17 @@
 	    url = "github:Mic92/sops-nix";
 	    inputs.nixpkgs.follows = "nixpkgs";
     };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, nixvim, home-manager, impermanence, sops-nix, disko }@inputs: {
+  outputs = { self, nixpkgs, nixvim, home-manager, impermanence, sops-nix }@inputs: {
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
-        ./disk-config.nix
 	      impermanence.nixosModules.impermanence
 	      sops-nix.nixosModules.sops
-        disko.nixosModules.disko
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
