@@ -42,6 +42,7 @@
       ".ssh"
       "rp"
     ];
+    allowOther = true;
   };
 
   programs.nixvim = {
