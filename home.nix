@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
 
@@ -37,7 +37,7 @@
   };
   
   # user persisted dirs
-  home.persistance."/persist/home" = {
+  home.persistence."/persist/home" = {
     directories = [
       ".ssh"
       "rp"
