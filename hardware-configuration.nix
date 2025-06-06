@@ -13,21 +13,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "zroot/root";
-      fsType = "zfs";
-    };
-
-  fileSystems."/nix" =
-    { device = "zroot/nix";
-      fsType = "zfs";
-    };
-
-  fileSystems."/persist" =
-    { device = "zroot/persist";
-      fsType = "zfs";
-    };
-
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
