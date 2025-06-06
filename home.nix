@@ -30,6 +30,20 @@
     userEmail = "roydumblauskas@gmail.com";
   };
 
+  # user program config files
+  home.file = {
+    "hypr".source = ./roy-config/hypr;
+    "waybar".source = ./roy-config/waybar;
+  };
+  
+  # user persisted dirs
+  home.persistance."/persist/home" = {
+    directories = [
+      ".ssh"
+      "rp"
+    ];
+  };
+
   programs.nixvim = {
     enable = true;
     opts = {
@@ -47,17 +61,17 @@
         enable = true;
         inlayHints = true;
         servers = {
-	  html.enable = true;
-	  lua_ls.enable = true;
-	  nil_ls.enable = true;
-	  ts_ls.enable = true;
-	  marksman.enable = true;
-	  pyright.enable = true;
+	        html.enable = true;
+	        lua_ls.enable = true;
+	        nil_ls.enable = true;
+	        ts_ls.enable = true;
+	        marksman.enable = true;
+	        pyright.enable = true;
           gopls.enable = true;
-	  terraformls.enable = true;
-	  ansiblels.enable = true;
+	        terraformls.enable = true;
+	        ansiblels.enable = true;
           jsonls.enable = true;
-	  yamlls.enable = true;
+	        yamlls.enable = true;
         };
 
 	keymaps = {
