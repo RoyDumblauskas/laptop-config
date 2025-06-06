@@ -24,6 +24,8 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+        ./hardware-configuration.nix
+        ./disk-config.nix
 	      impermanence.nixosModules.impermanence
 	      sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager {
