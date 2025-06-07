@@ -253,18 +253,18 @@
 	        yamlls.enable = true;
         };
 
-	keymaps = {
+        keymaps = {
           silent = true;
-	  lspBuf = {
-	    gd = {
-	      action = "definition";
-	      desc = "Goto Definition";
-	    };
+          lspBuf = {
+            gd = {
+              action = "definition";
+              desc = "Goto Definition";
+            };
             gr = {
               action = "references";
               desc = "Goto References";
             };
-	    gD = {
+            gD = {
               action = "declaration";
               desc = "Goto Declaration";
             };
@@ -272,7 +272,7 @@
               action = "implementation";
               desc = "Goto Implementation";
             };
-	    gT = {
+            gT = {
               action = "type_definition";
               desc = "Type Definition";
             };
@@ -284,28 +284,30 @@
               action = "workspace_symbol";
               desc = "Workspace Symbol";
             };
-	    "<leader>cr" = {
+          "<leader>cr" = {
               action = "rename";
               desc = "Rename";
             };
           };
-	  diagnostic = {
-	    "<leader>cd" = {
-	      action = "open_float";
-	      desc = "Line Diagnostics";
-	    };
+
+	        diagnostic = {
+              "<leader>cd" = {
+                action = "open_float";
+                desc = "Line Diagnostics";
+              };
             "]d" = {
-	      action = "goto_next";
+              action = "goto_next";
               desc = "Next Diagnostic";
             };
             "[d" = {
               action = "goto_prev";
               desc = "Previous Diagnostic";
             };
-	  };
-	};
+          };
+        };
       };
     };
+
     extraConfigLua = ''
       local _border = "rounded"
 
@@ -317,12 +319,12 @@
 
       vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
         vim.lsp.handlers.signature_help, {
-	  border = _border
-	}
+	        border = _border
+	      }
       )
 
       vim.diagnostic.config{
-	float={border=_border}
+      	float={border=_border}
       };
 
       require('lspconfig.ui.windows').default_options = {
