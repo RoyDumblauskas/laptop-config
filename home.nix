@@ -41,9 +41,29 @@
     directories = [
       ".ssh"
       "rp"
+      ".mozilla/firefox/roy/storage/default"
+      ".cache/mozilla/firefox/roy"
+    ];
+    files = [
+      ".bash_history"
+      ".mozilla/firefox/roy/places.sqlite"
+      ".mozilla/firefox/roy/cookies.sqlite"
     ];
     allowOther = true;
   };
+
+  # programs.firefox = {
+  #   enable = true;
+  #   policies = {
+  #     ExtensionSettings = {
+  #       "*".installation_mode = "blocked";
+  #       "uBlock0@raymondhill.net" = {
+  #         install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+  #         installation_mode = "force_installed";
+  #       };
+  #     };
+  #   };
+  # };
 
   # Configure firefox to be resilient against reboot
   # Source = https://github.com/johnmpost/nixos-config

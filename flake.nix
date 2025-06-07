@@ -16,9 +16,13 @@
 	    url = "github:Mic92/sops-nix";
 	    inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixvim, home-manager, impermanence, sops-nix }@inputs: {
+  outputs = { self, nixpkgs, nixvim, home-manager, impermanence, sops-nix, firefox-addons }@inputs: {
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -30,11 +34,12 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.roy = { ... }: {
             imports = [
               ./home.nix
               nixvim.homeManagerModules.nixvim
-	      impermanence.homeManagerModules.impermanence
+	            impermanence.homeManagerModules.impermanence
             ];
           };
         }
