@@ -99,6 +99,10 @@
     ];
   };
 
+  boot.initrd.postMountCommands = lib.mkAfter ''
+    zfs rollback -r zroot/root@blank
+  '';
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
