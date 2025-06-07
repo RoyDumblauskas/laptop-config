@@ -23,7 +23,7 @@
 
   fileSystems."/persist".neededForBoot = true;
 
-  environment.persistence."/nix/persist" = {
+  environment.persistence."/persist" = {
     directories = [
       "/etc/nixos"
       "/var/log"
