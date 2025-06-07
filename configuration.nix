@@ -21,6 +21,8 @@
     ];
   };
 
+  fileSystems."/persist".neededForBoot = true;
+
   # needed to allowOther in home.nix
   programs.fuse.userAllowOther = true;
 
@@ -83,22 +85,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define users
+  users.mutableUsers = false;
   users.users.roy = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
     extraGroups = [ "wheel" ];
   };
 
-  users.users.net = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    packages = with pkgs; [
-      tree
-      git
-    ];
-  };
-
+  # Delete root on reboot
   boot.initrd.postMountCommands = lib.mkAfter ''
     zfs rollback -r zroot/root@blank
   '';
@@ -106,8 +101,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Declare system wide pkgs
   environment.systemPackages = with pkgs; [
     gimp
     kitty
@@ -119,14 +113,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.mononoki
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
   programs.hyprland = {
@@ -148,6 +134,7 @@
       };
     };
   };
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.variables = {
