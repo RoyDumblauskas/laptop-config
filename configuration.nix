@@ -14,9 +14,15 @@
     efiSupport = true;
     efiInstallAsRemovable = true;
     mirroredBoots = [
-      { devices = [ "nodev" ]; path = "/boot"; }
+      { 
+        devices = [ "nodev" ];
+        path = "/boot";
+      }
     ];
   };
+
+  # needed to allowOther in home.nix
+  programs.fuse.userAllowOther = true;
 
   networking.hostName = "nixos";
   networking.hostId = "4cb9fc76";

@@ -32,12 +32,12 @@
 
   # user program config files
   home.file = {
-    "hypr".source = ./roy-config/hypr;
-    "waybar".source = ./roy-config/waybar;
+    ".config/hypr".source = ./roy-config/hypr;
+    ".config/waybar".source = ./roy-config/waybar;
   };
   
   # user persisted dirs
-  home.persistence."/persist/home" = {
+  home.persistence."/persist/home/roy" = {
     directories = [
       ".ssh"
       "rp"

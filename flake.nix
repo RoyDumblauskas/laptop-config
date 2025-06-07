@@ -25,8 +25,8 @@
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
-	      impermanence.nixosModules.impermanence
-	      sops-nix.nixosModules.sops
+        impermanence.nixosModules.impermanence
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -34,7 +34,7 @@
             imports = [
               ./home.nix
               nixvim.homeManagerModules.nixvim
-	            impermanence.homeManagerModules.impermanence
+	      impermanence.homeManagerModules.impermanence
             ];
           };
         }
