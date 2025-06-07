@@ -93,6 +93,7 @@
       extensions.force = true;
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
 	      ublock-origin
+        vimium
 	    ];
       extensions.settings."uBlock0@raymondhill.net".settings = {
         selectedFilterLists = [
