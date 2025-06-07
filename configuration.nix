@@ -86,6 +86,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.roy = {
     isNormalUser = true;
+    hashedPassword = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
     extraGroups = [ "wheel" ];
   };
 
