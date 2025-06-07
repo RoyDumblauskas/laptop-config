@@ -83,8 +83,8 @@
           amazon.metaData.hidden = true;
           ebay.metaData.hidden = true;
           ddgc = {
-            name = "DuckDuckGo (themed)";
-            urls = [{ template = "https://duckduckgo.com/?k7=222222&kj=222222&kae=d&q={searchTerms}"; }];
+            name = "DuckDuckGo (unthemed)";
+            urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
             icon = "https://duckduckgo.com/favicon.ico";
           };
         };
