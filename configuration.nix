@@ -24,7 +24,7 @@
   # needed to allowOther in home.nix
   programs.fuse.userAllowOther = true;
 
-  networking.hostName = "nixos";
+  networking.hostName = "roy-laptop";
   networking.hostId = "4cb9fc76";
 
   networking.wireless = {
