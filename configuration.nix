@@ -23,6 +23,14 @@
 
   fileSystems."/persist".neededForBoot = true;
 
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/etc/nixos"
+      "/var/log"
+      "/var/db/sudo/lectured"
+    ];
+  };
+
   # needed to allowOther in home.nix
   programs.fuse.userAllowOther = true;
 
