@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 
@@ -255,8 +255,18 @@
     };
 
     plugins = {
+      lualine.enable = true;
       lsp-lines.enable = true;
       lsp-format.enable = true;
+
+      neo-tree = {
+        enable = true;
+        filesystem.asyncDirectoryScan = "auto";
+      };
+
+      # neo-tree dependency
+      web-devicons.enable = true;
+
       lsp = {
         enable = true;
         inlayHints = true;
@@ -324,6 +334,29 @@
               action = "goto_prev";
               desc = "Previous Diagnostic";
             };
+          };
+        };
+      };
+
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings = {
+          sources = [
+            {name = "nvim_lsp";}
+            {name = "path";}
+            {name = "buffer";}
+            {name = "luasnip";}
+          ];
+
+          mapping = {
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-e>" = "cmp.mapping.close()";
+            "<C-f>" = "cmp.mapping.scroll_docs(4)";
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
           };
         };
       };
