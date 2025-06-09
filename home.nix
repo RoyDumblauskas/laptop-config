@@ -241,6 +241,45 @@
       expandtab = true;
     };
 
+    keymaps = [
+      {
+        action = "<cmd>Neotree toggle<CR>";
+        key = "<leader>nt";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Toggle Neotree";
+      }
+      {
+        action = "<C-w>h";
+        key = "<leader>nh";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus left";
+      }
+      {
+        action = "<C-w>l";
+        key = "<leader>nl";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus right";
+      }
+      {
+        action = "<C-w>j";
+        key = "<leader>nj";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus down";
+      }
+      {
+        action = "<C-w>k";
+        key = "<leader>nk";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus up";
+      }
+
+    ];
+
     plugins = {
       lualine.enable = true;
       lsp-lines.enable = true;
