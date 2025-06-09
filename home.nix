@@ -302,17 +302,17 @@
               action = "workspace_symbol";
               desc = "Workspace Symbol";
             };
-          "<leader>cr" = {
+            "<leader>cr" = {
               action = "rename";
               desc = "Rename";
             };
           };
 
 	        diagnostic = {
-              "<leader>cd" = {
-                action = "open_float";
-                desc = "Line Diagnostics";
-              };
+            "<leader>cd" = {
+              action = "open_float";
+              desc = "Line Diagnostics";
+            };
             "]d" = {
               action = "goto_next";
               desc = "Next Diagnostic";
