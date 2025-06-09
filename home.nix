@@ -52,19 +52,6 @@
     allowOther = true;
   };
 
-  # programs.firefox = {
-  #   enable = true;
-  #   policies = {
-  #     ExtensionSettings = {
-  #       "*".installation_mode = "blocked";
-  #       "uBlock0@raymondhill.net" = {
-  #         install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-  #         installation_mode = "force_installed";
-  #       };
-  #     };
-  #   };
-  # };
-
   # Configure firefox to be resilient against reboot
   # Source = https://github.com/johnmpost/nixos-config
   programs.firefox = {
@@ -386,7 +373,10 @@
       }
     '';
 
-    colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "frappe";
+    };
   };
 
 
