@@ -287,7 +287,6 @@
 
       neo-tree = {
         enable = true;
-        filesystem.asyncDirectoryScan = "auto";
       };
 
       # neo-tree dependency
