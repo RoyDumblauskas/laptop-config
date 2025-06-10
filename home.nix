@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 
@@ -10,6 +10,7 @@
     dig
     ffmpeg_6
     git
+    git-filter-repo
     grim
     kdePackages.gwenview
     prismlauncher
