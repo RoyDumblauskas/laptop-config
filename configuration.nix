@@ -32,6 +32,23 @@
     ];
   };
 
+  # SOPS config
+  sops = {
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    age.keyFile = "/var/lib/sops-nix/key.txt";
+    age.generateKey = true;
+    defaultSopsFormat = "json";
+    defaultSopsFile = ./secrets/roy.json;
+
+    # test secrets
+    secrets = {
+      "testKey" = {
+        sopsFile = ./secrets/roy.json;
+        key = "testKey";
+      };
+    };
+  };
+
   # needed to allowOther in home.nix
   programs.fuse.userAllowOther = true;
 
@@ -151,7 +168,15 @@
   };
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    hostKeys = [
+      {
+        type = "ed25519";
+        path = "/persist/etc/ssh/ssh_host_ed25519_key";
+      }
+    ];
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

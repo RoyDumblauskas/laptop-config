@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
@@ -43,7 +43,6 @@
       "rp"
       ".mozilla/firefox/roy/storage/default"
       ".cache/mozilla/firefox/roy"
-      "age"
     ];
     files = [
       ".bash_history"
@@ -52,16 +51,6 @@
       ".config/sops/age/keys.txt"
     ];
     allowOther = true;
-  };
-
-  # SOPS config
-  sops = {
-    age.keyFile = "/persist/home/roy/age/.age-key.txt";
-    defaultSopsFormat = "json";
-    defaultSopsFile = ./secrets/roy.json;
-    # secrets.test = {
-      # path = "%r/test.txt"; 
-    #};
   };
 
   # User services must come after sops secrets
