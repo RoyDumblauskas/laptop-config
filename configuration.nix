@@ -46,6 +46,10 @@
         sopsFile = ./secrets/roy.json;
         key = "testKey";
       };
+      "homeNetwork" = {
+        sopsFile = ./secrets/networking.yaml;
+        key = "homeNetwork";
+      };
     };
   };
 
@@ -57,9 +61,14 @@
 
   networking.wireless = {
     enable = true;
-    networks."flooper".pskRaw = "***REMOVED***";
-    networks."NU-Guest" = {
-      priority = -1;
+    environmentFile = config.sops.secrets."homeNetwork".path;
+    networks = {
+      "@homeSSID@" = {
+        psk = "@homePsk@";
+      };
+      "NU-Guest" = {
+        priority = -1;
+      };
     };
   };
 
