@@ -35,6 +35,7 @@
   # SOPS config
   sops = {
     age.sshKeyPaths = [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
+    # deleted and generated every boot
     age.keyFile = "/var/lib/sops-nix/key.txt";
     age.generateKey = true;
     defaultSopsFormat = "json";
