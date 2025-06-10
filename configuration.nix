@@ -38,7 +38,6 @@
     age.keyFile = "/var/lib/sops-nix/key.txt";
     age.generateKey = true;
     defaultSopsFormat = "json";
-    defaultSopsFile = ./secrets/roy.json;
 
     # test secrets
     secrets = {
@@ -49,6 +48,7 @@
       "networkPasswords" = {
         sopsFile = ./secrets/networking.yaml;
         key = "networkPasswords";
+        format = "yaml";
       };
     };
   };
@@ -64,7 +64,7 @@
     secretsFile = config.sops.secrets."networkPasswords".path;
     networks = {
       "flooper" = {
-        psk = "ext:flooperPsk";
+        pskRaw = "ext:flooperPsk";
       };
       "NU-Guest" = {
         priority = -1;
