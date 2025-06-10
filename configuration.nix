@@ -61,10 +61,10 @@
 
   networking.wireless = {
     enable = true;
-    environmentFile = config.sops.secrets."homeNetwork".path;
+    secretsFile = config.sops.secrets."homeNetwork".path;
     networks = {
-      "@homeSSID@" = {
-        psk = "@homePsk@";
+      "flooper" = {
+        psk = "ext:homePsk";
       };
       "NU-Guest" = {
         priority = -1;
