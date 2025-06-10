@@ -12,6 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence.url = "github:nix-community/impermanence";
+    # implement at some point (So I can push repo public)
     sops-nix = {
 	    url = "github:Mic92/sops-nix";
 	    inputs.nixpkgs.follows = "nixpkgs";
