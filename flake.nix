@@ -41,6 +41,7 @@
               ./home.nix
               nixvim.homeManagerModules.nixvim
 	            impermanence.homeManagerModules.impermanence
+              sops-nix.homeManagerModules.sops
             ];
           };
         }

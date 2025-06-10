@@ -52,6 +52,19 @@
     allowOther = true;
   };
 
+  # SOPS config
+  sops = {
+    age.sshKeyPaths = [ "/home/user/.ssh/id_ed25519" ];
+    defaultSopsFormat = "json";
+    defaultSopsFile = ./secrets/roy.json;
+    secrets.test = {
+      path = "%r/test.txt"; 
+    };
+  };
+
+  # User services must come after sops secrets
+  systemd.user.services.mbsync.unitConfig.After = [ "sops-nix.service" ];
+
   # Configure firefox to be resilient against reboot
   # Source = https://github.com/johnmpost/nixos-config
   programs.firefox = {
