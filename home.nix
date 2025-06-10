@@ -54,12 +54,14 @@
 
   # SOPS config
   sops = {
-    age.sshKeyPaths = [ "/home/user/.ssh/id_ed25519" ];
+    age.sshKeyPaths = [ "/home/roy/.ssh/id_ed25519" ];
+    age.keyFile = "/persist/home/roy/age-key.txt";
+    age.generateKey = true;
     defaultSopsFormat = "json";
     defaultSopsFile = ./secrets/roy.json;
-    secrets.test = {
-      path = "%r/test.txt"; 
-    };
+    # secrets.test = {
+      # path = "%r/test.txt"; 
+    #};
   };
 
   # User services must come after sops secrets
