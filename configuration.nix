@@ -70,6 +70,9 @@
       "NU-Guest" = {
         priority = -1;
       };
+      "d fam google" = {
+        pskRaw = "ext:ancestralGrounds";
+      };
     };
   };
 
