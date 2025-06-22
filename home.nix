@@ -18,6 +18,7 @@
     sops
     ssh-to-age
     tree
+    tmux
     unzip
     vlc
     wl-clipboard
