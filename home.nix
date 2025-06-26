@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     age
     dig
+    discord
     ffmpeg_6
     git
     git-filter-repo
