@@ -73,6 +73,9 @@
       "d fam google" = {
         pskRaw = "ext:ancestralGrounds";
       };
+      "mojo dojo casa house" = {
+        pskRaw = "ext:homeNetwork";
+      };
     };
   };
 
