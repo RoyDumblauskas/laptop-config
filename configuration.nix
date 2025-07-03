@@ -76,6 +76,9 @@
       "mojo dojo casa house" = {
         pskRaw = "ext:homeNetwork";
       };
+      "TwoHeartedQueen Guest" = {
+        pskRaw = "ext:2QCafe";
+      };
     };
   };
 
