@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     age
+    awscli2
     dig
     discord
     ffmpeg_6
@@ -14,6 +15,7 @@
     git-filter-repo
     grim
     kdePackages.gwenview
+    minio-client
     prismlauncher
     slurp
     sops
@@ -44,6 +46,7 @@
     directories = [
       ".ssh"
       "rp"
+      "dl"
       ".mozilla/firefox/roy/storage/default"
       ".cache/mozilla/firefox/roy"
     ];
