@@ -318,7 +318,11 @@
 	        ansiblels.enable = true;
           jsonls.enable = true;
 	        yamlls.enable = true;
-          rust_analyzer.enable = true;
+          rust_analyzer = {
+            enable = true;
+            installRustc = true;
+            installCargo = true;
+          };
         };
 
         keymaps = {
