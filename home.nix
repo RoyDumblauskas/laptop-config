@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     age
+    allacrity
     awscli2
     dig
     discord
