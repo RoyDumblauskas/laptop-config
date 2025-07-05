@@ -150,7 +150,7 @@
   # Declare system wide pkgs
   environment.systemPackages = with pkgs; [
     gimp
-    kitty
+    alacritty
     rose-pine-hyprcursor
     vim
     wget
