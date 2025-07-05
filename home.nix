@@ -7,7 +7,6 @@
 
   home.packages = with pkgs; [
     age
-    allacrity
     awscli2
     dig
     discord
@@ -41,6 +40,7 @@
   home.file = {
     ".config/hypr".source = ./roy-config/hypr;
     ".config/waybar".source = ./roy-config/waybar;
+    ".config/fish".source = ./roy-config/fish;
   };
   
   # user persisted dirs
