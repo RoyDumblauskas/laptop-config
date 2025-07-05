@@ -60,6 +60,9 @@
       ".mozilla/firefox/roy/cookies.sqlite"
       ".config/sops/age/keys.txt"
       ".local/share/PrismLauncher/accounts.json"
+      ".local/share/PrismLauncher/instances/1.21.6/instance.cfg"
+      ".local/share/PrismLauncher/instances/1.21.6/mmc-pack.json"
+
     ];
     allowOther = true;
   };
