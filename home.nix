@@ -11,6 +11,7 @@
     dig
     discord
     ffmpeg_6
+    fish
     git
     git-filter-repo
     grim
@@ -317,6 +318,7 @@
 	        ansiblels.enable = true;
           jsonls.enable = true;
 	        yamlls.enable = true;
+          rust_analyzer.enable = true;
         };
 
         keymaps = {

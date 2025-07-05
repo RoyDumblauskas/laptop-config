@@ -136,6 +136,7 @@
     isNormalUser = true;
     hashedPassword = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
     extraGroups = [ "wheel" ];
+    shell = pkgs.fish;
   };
 
   # Delete root on reboot
@@ -159,13 +160,16 @@
     nerd-fonts.mononoki
   ];
 
-  # List services that you want to enable:
-  programs.hyprland = {
-   enable = true;
-   xwayland.enable = true;
+  # List services that to enable:
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    waybar.enable = true;
+    fish.enable = true;
   };
 
-  programs.waybar.enable = true;
 
   programs.firefox = {
     enable = true;
