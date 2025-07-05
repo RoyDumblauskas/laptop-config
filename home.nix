@@ -41,8 +41,8 @@
     ".config/hypr".source = ./roy-config/hypr;
     ".config/waybar".source = ./roy-config/waybar;
     ".config/fish".source = ./roy-config/fish;
-    ".local/PrismLauncher/instances/1.26.6/minecraft/options.txt".source = ./roy-config/PrismLauncher/instances/1.26.6/minecraft/options.txt;
-    ".local/PrismLauncher/instances/1.26.6/minecraft/servers.dat".source = ./roy-config/PrismLauncher/instances/1.26.6/minecraft/servers.dat;
+    ".local/share/PrismLauncher/instances/1.26.6/minecraft/options.txt".source = ./roy-config/PrismLauncher/instances/1.26.6/minecraft/options.txt;
+    ".local/share/PrismLauncher/instances/1.26.6/minecraft/servers.dat".source = ./roy-config/PrismLauncher/instances/1.26.6/minecraft/servers.dat;
   };
   
   # user persisted dirs
@@ -59,7 +59,7 @@
       ".mozilla/firefox/roy/places.sqlite"
       ".mozilla/firefox/roy/cookies.sqlite"
       ".config/sops/age/keys.txt"
-      ".local/PrismLauncher/accounts.json"
+      ".local/share/PrismLauncher/accounts.json"
     ];
     allowOther = true;
   };
