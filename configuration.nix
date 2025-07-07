@@ -79,6 +79,9 @@
       "TwoHeartedQueen Guest" = {
         pskRaw = "ext:2QCafe";
       };
+      "Close Personal Friends of Osmium" = {
+        pskRaw = "ext:osmium";
+      };
     };
   };
 
