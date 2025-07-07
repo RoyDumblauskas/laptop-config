@@ -60,55 +60,39 @@
   networking.hostName = "roy-laptop";
   networking.hostId = "4cb9fc76";
 
-  networking.wireless = {
-    enable = true;
-    secretsFile = config.sops.secrets."networkPasswords".path;
-    networks = {
-      "flooper" = {
-        pskRaw = "ext:flooperPsk";
-      };
-      "NU-Guest" = {
-        priority = -1;
-      };
-      "d fam google" = {
-        pskRaw = "ext:ancestralGrounds";
-      };
-      "mojo dojo casa house" = {
-        pskRaw = "ext:homeNetwork";
-      };
-      "TwoHeartedQueen Guest" = {
-        pskRaw = "ext:2QCafe";
-      };
-      "Close Personal Friends of Osmium" = {
-        pskRaw = "ext:osmium";
+  networking = {
+    useDHCP = true;
+    networkmanager.enable = false;
+    wireless = {
+      userControlled.enable = true;
+      enable = true;
+      secretsFile = config.sops.secrets."networkPasswords".path;
+      networks = {
+        "flooper" = {
+          pskRaw = "ext:flooperPsk";
+        };
+        "NU-Guest" = {
+          priority = -1;
+        };
+        "d fam google" = {
+          pskRaw = "ext:ancestralGrounds";
+        };
+        "mojo dojo casa house" = {
+          pskRaw = "ext:homeNetwork";
+        };
+        "TwoHeartedQueen Guest" = {
+          pskRaw = "ext:2QCafe";
+        };
+        "Close Personal Friends of Osmium" = {
+          pskRaw = "ext:osmium";
+        };
       };
     };
-  };
 
-  networking.wireless.userControlled.enable = true; # Enable user to edit wpa_supplicant.
-  networking.networkmanager.enable = false;  # Easiest to use and most distros use this by default.
+  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
   services.printing = {
@@ -122,6 +106,7 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
@@ -138,7 +123,7 @@
   users.users.roy = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.fish;
   };
 
