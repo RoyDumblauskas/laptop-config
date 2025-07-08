@@ -86,6 +86,9 @@
         "Close Personal Friends of Osmium" = {
           pskRaw = "ext:osmium";
         };
+        "Pedestrian" = {
+          pskRaw = "ext:pedestrian";
+        };
       };
     };
 
