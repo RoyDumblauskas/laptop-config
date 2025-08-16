@@ -7,9 +7,9 @@ import = [
 shell = "fish"
 
 [font]
-normal = { family = "Ubuntu Sans Mono" }
-italic = { family = "Ubuntu Sans Mono" }
-bold = { family = "Ubuntu Sans Mono" }
+normal = { family = "Ubuntu Mono" }
+italic = { family = "Ubuntu Mono" }
+bold = { family = "Ubuntu Mono" }
 size = 18
 
 [window]

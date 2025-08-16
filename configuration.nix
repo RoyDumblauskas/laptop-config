@@ -149,7 +149,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.mononoki
-    nerd-fonts.ubuntu-sans
+    nerd-fonts.ubuntu-mono
   ];
 
   # List services that to enable:
