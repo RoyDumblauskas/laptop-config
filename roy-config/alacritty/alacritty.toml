@@ -1,0 +1,12 @@
+[terminal]
+shell = "fish"
+
+[font]
+normal = { family = "Ubuntu Sans Mono" }
+italic = { family = "Ubuntu Sans Mono" }
+bold = { family = "Ubuntu Sans Mono" }
+size = 18
+
+[window]
+decorations = "full"
+opacity = 1
