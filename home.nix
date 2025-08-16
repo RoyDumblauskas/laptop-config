@@ -252,6 +252,7 @@
   # Configure nixvim
   programs.nixvim = {
     enable = true;
+    globals.mapleader = " ";
     opts = {
       number = true;
       relativenumber = true;
@@ -263,35 +264,35 @@
     keymaps = [
       {
         action = "<cmd>Neotree toggle<CR>";
-        key = "<leader>nt";
+        key = "<leader>b";
         mode = [ "n" ];
         options.silent = true;
         options.desc = "Toggle Neotree";
       }
       {
         action = "<C-w>h";
-        key = "<leader>nh";
+        key = "<leader>h";
         mode = [ "n" ];
         options.silent = true;
         options.desc = "Focus left";
       }
       {
         action = "<C-w>l";
-        key = "<leader>nl";
+        key = "<leader>l";
         mode = [ "n" ];
         options.silent = true;
         options.desc = "Focus right";
       }
       {
         action = "<C-w>j";
-        key = "<leader>nj";
+        key = "<leader>j";
         mode = [ "n" ];
         options.silent = true;
         options.desc = "Focus down";
       }
       {
         action = "<C-w>k";
-        key = "<leader>nk";
+        key = "<leader>k";
         mode = [ "n" ];
         options.silent = true;
         options.desc = "Focus up";
@@ -364,7 +365,7 @@
               action = "workspace_symbol";
               desc = "Workspace Symbol";
             };
-            "<leader>cr" = {
+            "<leader>r" = {
               action = "rename";
               desc = "Rename";
             };
