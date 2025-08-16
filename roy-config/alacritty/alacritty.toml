@@ -7,10 +7,10 @@ import = [
 shell = "fish"
 
 [font]
-normal = { family = "Ubuntu Mono" }
-italic = { family = "Ubuntu Mono" }
-bold = { family = "Ubuntu Mono" }
-size = 18
+normal = { family = "UbuntuMono Nerd Font" }
+italic = { family = "UbuntuMono Nerd Font" }
+bold = { family = "UbuntuMono Nerd Font" }
+size = 16
 
 [window]
 decorations = "full"
