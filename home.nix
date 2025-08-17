@@ -331,6 +331,11 @@
             enable = true;
             installRustc = true;
             installCargo = true;
+            settings = {
+              cargo = {
+                features = "all";
+              };
+            };
           };
         };
 
