@@ -42,10 +42,6 @@
 
     # test secrets
     secrets = {
-      "testKey" = {
-        sopsFile = ./secrets/roy.json;
-        key = "testKey";
-      };
       "networkPasswords" = {
         sopsFile = ./secrets/networking.yaml;
         key = "networkPasswords";
@@ -65,26 +61,11 @@
       enable = true;
       secretsFile = config.sops.secrets."networkPasswords".path;
       networks = {
-        "flooper" = {
-          pskRaw = "ext:flooperPsk";
-        };
         "NU-Guest" = {
           priority = -1;
         };
-        "d fam google" = {
-          pskRaw = "ext:ancestralGrounds";
-        };
         "mojo dojo casa house" = {
           pskRaw = "ext:homeNetwork";
-        };
-        "TwoHeartedQueen Guest" = {
-          pskRaw = "ext:2QCafe";
-        };
-        "Close Personal Friends of Osmium" = {
-          pskRaw = "ext:osmium";
-        };
-        "Pedestrian" = {
-          pskRaw = "ext:pedestrian";
         };
       };
     };
