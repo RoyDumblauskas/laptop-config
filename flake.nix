@@ -11,6 +11,10 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     impermanence.url = "github:nix-community/impermanence";
     # implement at some point (So I can push repo public)
     sops-nix = {
@@ -23,13 +27,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixvim, home-manager, impermanence, sops-nix, firefox-addons }@inputs: {
+  outputs = { self, nixpkgs, nixvim, home-manager, disko, impermanence, sops-nix, firefox-addons }@inputs: {
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
+        ./disk-config.nix
+        disko.nixosModules.disko
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager {

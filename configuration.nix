@@ -54,9 +54,6 @@
     };
   };
 
-  # needed to allowOther in home.nix
-  programs.fuse.userAllowOther = true;
-
   networking.hostName = "roy-laptop";
   networking.hostId = "4cb9fc76";
 
@@ -160,6 +157,9 @@
     };
     waybar.enable = true;
     fish.enable = true;
+
+    # needed to allowOther in home.nix
+    fuse.userAllowOther = true;
   };
 
   programs = {
@@ -168,19 +168,6 @@
       remotePlay.openFirewall = true;       
       dedicatedServer.openFirewall = true;      
       localNetworkGameTransfers.openFirewall = true;
-    };
-  };
-
-  programs.firefox = {
-    enable = true;
-    policies = {
-      ExtensionSettings = {
-        "*".installation_mode = "blocked";
-        "uBlock0@raymondhill.net" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-          installation_mode = "force_installed";
-        };
-      };
     };
   };
 
