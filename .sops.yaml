@@ -1,7 +1,9 @@
 keys:
   - &user_roy age1zad0qu648dhjav4pzjhkc6vswnqtacuv9230xcgle8wmv56r8ykqn0ud7y
+  - &system age1awcm4kpq9zpl2fwxuktmxkwuse5reup2rfzrdsnh643ahy7ncgcq6e6ey2
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
       - *user_roy
+      - *system
