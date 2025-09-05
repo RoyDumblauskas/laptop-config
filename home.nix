@@ -14,6 +14,7 @@
     fish
     git
     git-filter-repo
+    go
     grim
     kdePackages.gwenview
     minio-client
