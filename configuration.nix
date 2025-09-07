@@ -29,6 +29,7 @@
       "/var/log"
       "/var/db/sudo/lectured"
       "/var/lib/nixos"
+      "/var/lib/bluetooth"
     ];
   };
 
@@ -147,6 +148,24 @@
       remotePlay.openFirewall = true;       
       dedicatedServer.openFirewall = true;      
       localNetworkGameTransfers.openFirewall = true;
+    };
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        # Shows battery charge of connected devices on supported
+        # Bluetooth adapters. Defaults to 'false'.
+        Experimental = true;
+      };
+      Policy = {
+        # Enable all controllers when they are found. This includes
+        # adapters present on start as well as adapters that are plugged
+        # in later on.
+        AutoEnable = true;
+      };
     };
   };
 

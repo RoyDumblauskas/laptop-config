@@ -56,7 +56,7 @@
       ".mozilla/firefox/roy/storage/default"
       ".cache/mozilla/firefox/roy"
       # persist steam
-      ".steam"
+      ".local/share/Steam"
     ];
     files = [
       ".bash_history"
