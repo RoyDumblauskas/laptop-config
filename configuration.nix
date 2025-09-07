@@ -89,6 +89,9 @@
     openFirewall = true;
   };
 
+  # Graphical bluetooth
+  services.blueman.enable = true;
+
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
