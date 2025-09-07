@@ -143,15 +143,6 @@
     fuse.userAllowOther = true;
   };
 
-  programs = {
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;       
-      dedicatedServer.openFirewall = true;      
-      localNetworkGameTransfers.openFirewall = true;
-    };
-  };
-
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.variables = {

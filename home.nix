@@ -55,6 +55,8 @@
       "dl"
       ".mozilla/firefox/roy/storage/default"
       ".cache/mozilla/firefox/roy"
+      # persist steam
+      ".steam"
     ];
     files = [
       ".bash_history"
@@ -446,6 +448,13 @@
       enable = true;
       settings.flavour = "frappe";
     };
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;       
+    dedicatedServer.openFirewall = true;      
+    localNetworkGameTransfers.openFirewall = true;
   };
 
 
