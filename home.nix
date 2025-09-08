@@ -27,6 +27,7 @@
     unzip
     vlc
     wl-clipboard
+    xorg.xrandr
     yq-go
     zip
   ];
