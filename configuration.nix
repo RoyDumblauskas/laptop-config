@@ -65,6 +65,9 @@
         "NU-Guest" = {
           priority = -1;
         };
+        "CapitalOneCafe" = {
+          priority = -1;
+        };
         "mojo dojo casa house" = {
           pskRaw = "ext:homeNetwork";
         };
