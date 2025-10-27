@@ -65,7 +65,7 @@
         "NU-Guest" = {
           priority = -1;
         };
-        "CapitalOneCafe" = {
+        "Intelligentsia Public" = {
           priority = -1;
         };
         "mojo dojo casa house" = {
