@@ -71,6 +71,9 @@
         "mojo dojo casa house" = {
           pskRaw = "ext:homeNetwork";
         };
+        "Galaxy S6 2279" = {
+          pskRaw = "ext:mobileHotspot";
+        };
       };
     };
 
