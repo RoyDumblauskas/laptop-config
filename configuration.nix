@@ -195,7 +195,13 @@
     ];
   };
 
-  services.postgresql.enable = true;
+  services.postgresql = {
+    enable = true;
+
+    identMap = ''
+      postgres roy postgres
+    '';
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
