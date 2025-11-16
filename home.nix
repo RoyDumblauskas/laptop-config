@@ -18,6 +18,7 @@
     grim
     kdePackages.gwenview
     minio-client
+    nodejs_22
     prismlauncher
     slurp
     sops
