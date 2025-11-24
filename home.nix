@@ -19,6 +19,7 @@
     kdePackages.gwenview
     minio-client
     nodejs_22
+    postman
     prismlauncher
     slurp
     sops
