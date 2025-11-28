@@ -74,6 +74,9 @@
         "Galaxy S6 2279" = {
           pskRaw = "ext:mobileHotspot";
         };
+        "d fam google" = {
+          pskRaw = "ext:home";
+        };
       };
     };
 
