@@ -104,7 +104,7 @@
       };
 
       extensions.force = true;
-      extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
 	      ublock-origin
         vimium-c
 	    ];
@@ -304,10 +304,8 @@
         options.silent = true;
         options.desc = "Focus up";
       }
-
     ];
 
-    # LSP settings
     lsp = {
       inlayHints.enable = true;
       servers = {
@@ -325,8 +323,6 @@
         rust_analyzer = {
           enable = true;
           config = {
-            installRustc = true;
-            installCargo = true;
             cargo = {
               features = "all";
             };
@@ -338,72 +334,73 @@
         {
           key = "gd";
           lspBufAction = "definition";
-          desc = "Goto Definition";
+          options.desc = "Goto Definition";
           options.silent = true;
           mode = [ "n" ];
         }
         {
           key = "gr"; 
           lspBufAction = "references";
-          desc = "Goto References";
+          options.desc = "Goto References";
           options.silent = true;
           mode = [ "n" ];
         }
         {
           key = "gD"; 
           lspBufAction = "declaration";
-          desc = "Goto Declaration";
+          options.desc = "Goto Declaration";
           options.silent = true;
           mode = [ "n" ];
         }
         {
           key = "gI"; 
           lspBufAction = "implementation";
-          desc = "Goto Implementation";
+          options.desc = "Goto Implementation";
           options.silent = true;
           mode = [ "n" ];
         }
         {
           key = "gT"; 
           lspBufAction = "type_definition";
-          desc = "Type Definition";
+          options.desc = "Type Definition";
           options.silent = true;
           mode = [ "n" ];
         }
         {
           key = "K"; 
           lspBufAction = "hover";
-          desc = "Hover";
+          options.desc = "Hover";
           options.silent = true;
           mode = [ "n" ];
         }
         {
           key = "<leader>cw";
           action = "workspace_symbol";
-          desc = "Workspace Symbol";
+          options.desc = "Workspace Symbol";
           mode = [ "n" ];
         }
         {
           key = "<leader>r";
           action = "rename";
+          options.desc = "Rename variable";
           mode = [ "n" ];
         }
         {
           key = "<leader>cd";
           action = "open_float";
-          desc = "Line Diagnostics";
+          options.desc = "Line Diagnostics";
           mode = [ "n" ];
         }
         {
           key = "]d";
           action = "goto_next";
-          desc = "Next Diagnostic";
+          options.desc = "Next Diagnostic";
           mode = [ "n" ];
         }
         {
           key = "[d";
           action = "goto_prev";
-          desc = "Previous Diagnostic";
+          options.desc = "Previous Diagnostic";
           mode = [ "n" ];
         }
       ];
@@ -411,8 +408,6 @@
 
     plugins = {
       lualine.enable = true;
-      lsp-lines.enable = true;
-      lsp-format.enable = true;
 
       neo-tree = {
         enable = true;
@@ -431,7 +426,6 @@
             {name = "buffer";}
             {name = "luasnip";}
           ];
-
           mapping = {
             "<C-Space>" = "cmp.mapping.complete()";
             "<C-d>" = "cmp.mapping.scroll_docs(-4)";
@@ -444,7 +438,6 @@
         };
       };
     };
-
     extraConfigLua = ''
       local _border = "rounded"
 
