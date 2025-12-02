@@ -45,7 +45,7 @@
           home-manager.users.roy = { ... }: {
             imports = [
               ./home.nix
-              nixvim.homeModules.nixvim
+              nixvim.homeManagerModules.nixvim
 	            impermanence.homeManagerModules.impermanence
               sops-nix.homeManagerModules.sops
             ];
