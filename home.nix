@@ -268,35 +268,44 @@
       expandtab = true;
     };
 
-    keymaps = {
-      normal = {
-        "<leader>b" = {
-          action = "<cmd>Neotree toggle<CR>";
-          options.silent = true;
-          options.desc = "Toggle Neotree";
-        };
-        "<leader>h" = {
-          action = "<C-w>h";
-          options.silent = true;
-          options.desc = "Focus left";
-        };
-        "<leader>l" = {
-          action = "<C-w>l";
-          options.silent = true;
-          options.desc = "Focus right";
-        };
-        "<leader>j" = {
-          action = "<C-w>j";
-          options.silent = true;
-          options.desc = "Focus down";
-        };
-        "<leader>k" = {
-          action = "<C-w>k";
-          options.silent = true;
-          options.desc = "Focus up";
-        };
-      };
-    };
+    keymaps = [
+      {
+        action = "<cmd>Neotree toggle<CR>";
+        key = "<leader>b";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Toggle Neotree";
+      }
+      {
+        action = "<C-w>h";
+        key = "<leader>h";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus left";
+      }
+      {
+        action = "<C-w>l";
+        key = "<leader>l";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus right";
+      }
+      {
+        action = "<C-w>j";
+        key = "<leader>j";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus down";
+      }
+      {
+        action = "<C-w>k";
+        key = "<leader>k";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Focus up";
+      }
+
+    ];
 
     plugins = {
       lualine.enable = true;
@@ -340,56 +349,52 @@
         keymaps = {
           silent = true;
           lspBuf = {
-            normal = {
-              gd = {
-                action = "definition";
-                desc = "Goto Definition";
-              };
-              gr = {
-                action = "references";
-                desc = "Goto References";
-              };
-              gD = {
-                action = "declaration";
-                desc = "Goto Declaration";
-              };
-              gI = {
-                action = "implementation";
-                desc = "Goto Implementation";
-              };
-              gT = {
-                action = "type_definition";
-                desc = "Type Definition";
-              };
-              K = {
-                action = "hover";
-                desc = "Hover";
-              };
-              "<leader>cw" = {
-                action = "workspace_symbol";
-                desc = "Workspace Symbol";
-              };
-              "<leader>r" = {
-                action = "rename";
-                desc = "Rename";
-              };
+            gd = {
+              action = "definition";
+              desc = "Goto Definition";
+            };
+            gr = {
+              action = "references";
+              desc = "Goto References";
+            };
+            gD = {
+              action = "declaration";
+              desc = "Goto Declaration";
+            };
+            gI = {
+              action = "implementation";
+              desc = "Goto Implementation";
+            };
+            gT = {
+              action = "type_definition";
+              desc = "Type Definition";
+            };
+            K = {
+              action = "hover";
+              desc = "Hover";
+            };
+            "<leader>cw" = {
+              action = "workspace_symbol";
+              desc = "Workspace Symbol";
+            };
+            "<leader>r" = {
+              action = "rename";
+              desc = "Rename";
             };
           };
 
 	        diagnostic = {
-            normal = {
-              "<leader>cd" = {
-                action = "open_float";
-                desc = "Line Diagnostics";
-              };
-              "]d" = {
-                action = "goto_next";
-                desc = "Next Diagnostic";
-              };
-              "[d" = {
-                action = "goto_prev";
-                desc = "Previous Diagnostic";
-              };
+            "<leader>cd" = {
+              action = "open_float";
+              desc = "Line Diagnostics";
+            };
+            "]d" = {
+              action = "goto_next";
+              desc = "Next Diagnostic";
+            };
+            "[d" = {
+              action = "goto_prev";
+              desc = "Previous Diagnostic";
             };
           };
         };
