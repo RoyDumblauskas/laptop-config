@@ -37,8 +37,11 @@
 
   programs.git = {
     enable = true;
-    userName = "Roy Dumblauskas";
-    userEmail = "roydumblauskas@gmail.com";
+    setttings = {
+      user.name = "Roy Dumblauskas";
+      user.email = "roydumblauskas@gmail.com";
+
+    };
   };
 
   # user program config files
