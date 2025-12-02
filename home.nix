@@ -309,8 +309,7 @@
 
     # LSP settings
     lsp = {
-      enable = true;
-      inlayHints = true;
+      inlayHints.enable = true;
       servers = {
         html.enable = true;
         lua_ls.enable = true;
@@ -325,9 +324,9 @@
         yamlls.enable = true;
         rust_analyzer = {
           enable = true;
-          installRustc = true;
-          installCargo = true;
-          settings = {
+          config = {
+            installRustc = true;
+            installCargo = true;
             cargo = {
               features = "all";
             };
@@ -421,8 +420,6 @@
 
       # neo-tree dependency
       web-devicons.enable = true;
-
-
 
       cmp = {
         enable = true;
