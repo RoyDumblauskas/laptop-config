@@ -307,6 +307,109 @@
 
     ];
 
+    # LSP settings
+    lsp = {
+      enable = true;
+      inlayHints = true;
+      servers = {
+        html.enable = true;
+        lua_ls.enable = true;
+        nil_ls.enable = true;
+        ts_ls.enable = true;
+        marksman.enable = true;
+        pyright.enable = true;
+        gopls.enable = true;
+        terraformls.enable = true;
+        ansiblels.enable = true;
+        jsonls.enable = true;
+        yamlls.enable = true;
+        rust_analyzer = {
+          enable = true;
+          installRustc = true;
+          installCargo = true;
+          settings = {
+            cargo = {
+              features = "all";
+            };
+          };
+        };
+      };
+
+      keymaps = [
+        {
+          key = "gd";
+          lspBufAction = "definition";
+          desc = "Goto Definition";
+          options.silent = true;
+          mode = [ "n" ];
+        }
+        {
+          key = "gr"; 
+          lspBufAction = "references";
+          desc = "Goto References";
+          options.silent = true;
+          mode = [ "n" ];
+        }
+        {
+          key = "gD"; 
+          lspBufAction = "declaration";
+          desc = "Goto Declaration";
+          options.silent = true;
+          mode = [ "n" ];
+        }
+        {
+          key = "gI"; 
+          lspBufAction = "implementation";
+          desc = "Goto Implementation";
+          options.silent = true;
+          mode = [ "n" ];
+        }
+        {
+          key = "gT"; 
+          lspBufAction = "type_definition";
+          desc = "Type Definition";
+          options.silent = true;
+          mode = [ "n" ];
+        }
+        {
+          key = "K"; 
+          lspBufAction = "hover";
+          desc = "Hover";
+          options.silent = true;
+          mode = [ "n" ];
+        }
+        {
+          key = "<leader>cw";
+          action = "workspace_symbol";
+          desc = "Workspace Symbol";
+          mode = [ "n" ];
+        }
+        {
+          key = "<leader>r";
+          action = "rename";
+          mode = [ "n" ];
+        }
+        {
+          key = "<leader>cd";
+          action = "open_float";
+          desc = "Line Diagnostics";
+          mode = [ "n" ];
+        }
+        {
+          key = "]d";
+          action = "goto_next";
+          desc = "Next Diagnostic";
+          mode = [ "n" ];
+        }
+        {
+          key = "[d";
+          action = "goto_prev";
+          desc = "Previous Diagnostic";
+          mode = [ "n" ];
+        }
+      ];
+    };
+
     plugins = {
       lualine.enable = true;
       lsp-lines.enable = true;
@@ -319,96 +422,7 @@
       # neo-tree dependency
       web-devicons.enable = true;
 
-      lsp = {
-        enable = true;
-        inlayHints = true;
-        servers = {
-	        html.enable = true;
-	        lua_ls.enable = true;
-	        nil_ls.enable = true;
-	        ts_ls.enable = true;
-	        marksman.enable = true;
-	        pyright.enable = true;
-          gopls.enable = true;
-	        terraformls.enable = true;
-	        ansiblels.enable = true;
-          jsonls.enable = true;
-	        yamlls.enable = true;
-          rust_analyzer = {
-            enable = true;
-            installRustc = true;
-            installCargo = true;
-            settings = {
-              cargo = {
-                features = "all";
-              };
-            };
-          };
-        };
 
-        keymaps = [
-          {
-            key = "gd";
-            lspBufAction = "definition";
-            desc = "Goto Definition";
-            options.silent = true;
-          }
-          {
-            key = "gr"; 
-            lspBufAction = "references";
-            desc = "Goto References";
-            options.silent = true;
-          }
-          {
-            key = "gD"; 
-            lspBufAction = "declaration";
-            desc = "Goto Declaration";
-            options.silent = true;
-          }
-          {
-            key = "gI"; 
-            lspBufAction = "implementation";
-            desc = "Goto Implementation";
-            options.silent = true;
-          }
-          {
-            key = "gT"; 
-            lspBufAction = "type_definition";
-            desc = "Type Definition";
-            options.silent = true;
-          }
-          {
-            key = "K"; 
-            lspBufAction = "hover";
-            desc = "Hover";
-            options.silent = true;
-          }
-          {
-            key = "<leader>cw";
-            action = "workspace_symbol";
-            desc = "Workspace Symbol";
-          }
-          {
-            key = "<leader>r";
-            action = "rename";
-          }
-          {
-            key = "<leader>cd";
-            action = "open_float";
-            desc = "Line Diagnostics";
-          }
-          {
-            key = "]d";
-            action = "goto_next";
-            desc = "Next Diagnostic";
-          }
-          {
-            key = "[d";
-            action = "goto_prev";
-            desc = "Previous Diagnostic";
-          }
-        ];
-      };
 
       cmp = {
         enable = true;
