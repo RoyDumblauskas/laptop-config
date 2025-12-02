@@ -37,7 +37,7 @@
 
   programs.git = {
     enable = true;
-    setttings = {
+    settings = {
       user.name = "Roy Dumblauskas";
       user.email = "roydumblauskas@gmail.com";
 
