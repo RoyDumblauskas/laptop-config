@@ -346,58 +346,68 @@
           };
         };
 
-        keymaps = {
-          silent = true;
-          lspBuf = {
-            gd = {
-              action = "definition";
-              desc = "Goto Definition";
-            };
-            gr = {
-              action = "references";
-              desc = "Goto References";
-            };
-            gD = {
-              action = "declaration";
-              desc = "Goto Declaration";
-            };
-            gI = {
-              action = "implementation";
-              desc = "Goto Implementation";
-            };
-            gT = {
-              action = "type_definition";
-              desc = "Type Definition";
-            };
-            K = {
-              action = "hover";
-              desc = "Hover";
-            };
-            "<leader>cw" = {
-              action = "workspace_symbol";
-              desc = "Workspace Symbol";
-            };
-            "<leader>r" = {
-              action = "rename";
-              desc = "Rename";
-            };
-          };
-
-	        diagnostic = {
-            "<leader>cd" = {
-              action = "open_float";
-              desc = "Line Diagnostics";
-            };
-            "]d" = {
-              action = "goto_next";
-              desc = "Next Diagnostic";
-            };
-            "[d" = {
-              action = "goto_prev";
-              desc = "Previous Diagnostic";
-            };
-          };
-        };
+        keymaps = [
+          {
+            key = "gd";
+            lspBufAction = "definition";
+            desc = "Goto Definition";
+            options.silent = true;
+          }
+          {
+            key = "gr"; 
+            lspBufAction = "references";
+            desc = "Goto References";
+            options.silent = true;
+          }
+          {
+            key = "gD"; 
+            lspBufAction = "declaration";
+            desc = "Goto Declaration";
+            options.silent = true;
+          }
+          {
+            key = "gI"; 
+            lspBufAction = "implementation";
+            desc = "Goto Implementation";
+            options.silent = true;
+          }
+          {
+            key = "gT"; 
+            lspBufAction = "type_definition";
+            desc = "Type Definition";
+            options.silent = true;
+          }
+          {
+            key = "K"; 
+            lspBufAction = "hover";
+            desc = "Hover";
+            options.silent = true;
+          }
+          {
+            key = "<leader>cw";
+            action = "workspace_symbol";
+            desc = "Workspace Symbol";
+          }
+          {
+            key = "<leader>r";
+            action = "rename";
+          }
+          {
+            key = "<leader>cd";
+            action = "open_float";
+            desc = "Line Diagnostics";
+          }
+          {
+            key = "]d";
+            action = "goto_next";
+            desc = "Next Diagnostic";
+          }
+          {
+            key = "[d";
+            action = "goto_prev";
+            desc = "Previous Diagnostic";
+          }
+        ];
       };
 
       cmp = {
