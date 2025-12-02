@@ -29,6 +29,7 @@
     unzip
     vlc
     wl-clipboard
+    wofi
     xorg.xrandr
     yq-go
     zip
