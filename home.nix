@@ -21,6 +21,7 @@
     nodejs_22
     postman
     prismlauncher
+    python3
     slurp
     sops
     ssh-to-age
