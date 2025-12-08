@@ -309,108 +309,112 @@
       }
     ];
 
-    lsp = {
-      inlayHints.enable = true;
-      servers = {
-        html.enable = true;
-        lua_ls.enable = true;
-        nil_ls.enable = true;
-        ts_ls.enable = true;
-        marksman.enable = true;
-        pyright.enable = true;
-        gopls.enable = true;
-        terraformls.enable = true;
-        ansiblels.enable = true;
-        jsonls.enable = true;
-        yamlls.enable = true;
-        rust_analyzer = {
-          enable = true;
-          config = {
-            cargo = {
-              features = "all";
-            };
-          };
-        };
-      };
-
-      keymaps = [
-        {
-          key = "gd";
-          lspBufAction = "definition";
-          options.desc = "Goto Definition";
-          options.silent = true;
-          mode = [ "n" ];
-        }
-        {
-          key = "gr"; 
-          lspBufAction = "references";
-          options.desc = "Goto References";
-          options.silent = true;
-          mode = [ "n" ];
-        }
-        {
-          key = "gD"; 
-          lspBufAction = "declaration";
-          options.desc = "Goto Declaration";
-          options.silent = true;
-          mode = [ "n" ];
-        }
-        {
-          key = "gI"; 
-          lspBufAction = "implementation";
-          options.desc = "Goto Implementation";
-          options.silent = true;
-          mode = [ "n" ];
-        }
-        {
-          key = "gT"; 
-          lspBufAction = "type_definition";
-          options.desc = "Type Definition";
-          options.silent = true;
-          mode = [ "n" ];
-        }
-        {
-          key = "K"; 
-          lspBufAction = "hover";
-          options.desc = "Hover";
-          options.silent = true;
-          mode = [ "n" ];
-        }
-        {
-          key = "<leader>cw";
-          action = "workspace_symbol";
-          options.desc = "Workspace Symbol";
-          mode = [ "n" ];
-        }
-        {
-          key = "<leader>r";
-          action = "rename";
-          options.desc = "Rename variable";
-          mode = [ "n" ];
-        }
-        {
-          key = "<leader>cd";
-          action = "open_float";
-          options.desc = "Line Diagnostics";
-          mode = [ "n" ];
-        }
-        {
-          key = "]d";
-          action = "goto_next";
-          options.desc = "Next Diagnostic";
-          mode = [ "n" ];
-        }
-        {
-          key = "[d";
-          action = "goto_prev";
-          options.desc = "Previous Diagnostic";
-          mode = [ "n" ];
-        }
-      ];
-    };
+    
 
     plugins = {
       lualine.enable = true;
+      lsp-lines.enable = true;
+      lsp-format.enable = true;
+
+      lsp = {
+        inlayHints.enable = true;
+        servers = {
+          html.enable = true;
+          lua_ls.enable = true;
+          nil_ls.enable = true;
+          ts_ls.enable = true;
+          marksman.enable = true;
+          pyright.enable = true;
+          gopls.enable = true;
+          terraformls.enable = true;
+          ansiblels.enable = true;
+          jsonls.enable = true;
+          yamlls.enable = true;
+          rust_analyzer = {
+            enable = true;
+            config = {
+              cargo = {
+                features = "all";
+              };
+            };
+          };
+        };
+
+        keymaps = [
+          {
+            key = "gd";
+            lspBufAction = "definition";
+            options.desc = "Goto Definition";
+            options.silent = true;
+            mode = [ "n" ];
+          }
+          {
+            key = "gr"; 
+            lspBufAction = "references";
+            options.desc = "Goto References";
+            options.silent = true;
+            mode = [ "n" ];
+          }
+          {
+            key = "gD"; 
+            lspBufAction = "declaration";
+            options.desc = "Goto Declaration";
+            options.silent = true;
+            mode = [ "n" ];
+          }
+          {
+            key = "gI"; 
+            lspBufAction = "implementation";
+            options.desc = "Goto Implementation";
+            options.silent = true;
+            mode = [ "n" ];
+          }
+          {
+            key = "gT"; 
+            lspBufAction = "type_definition";
+            options.desc = "Type Definition";
+            options.silent = true;
+            mode = [ "n" ];
+          }
+          {
+            key = "K"; 
+            lspBufAction = "hover { border = 'single' }";
+            options.desc = "Hover";
+            options.silent = true;
+            mode = [ "n" ];
+          }
+          {
+            key = "<leader>cw";
+            action = "workspace_symbol";
+            options.desc = "Workspace Symbol";
+            mode = [ "n" ];
+          }
+          {
+            key = "<leader>r";
+            action = "rename";
+            options.desc = "Rename variable";
+            mode = [ "n" ];
+          }
+          {
+            key = "<leader>cd";
+            action = "open_float";
+            options.desc = "Line Diagnostics";
+            mode = [ "n" ];
+          }
+          {
+            key = "]d";
+            action = "goto_next";
+            options.desc = "Next Diagnostic";
+            mode = [ "n" ];
+          }
+          {
+            key = "[d";
+            action = "goto_prev";
+            options.desc = "Previous Diagnostic";
+            mode = [ "n" ];
+          }
+        ];
+      };
 
       neo-tree = {
         enable = true;
