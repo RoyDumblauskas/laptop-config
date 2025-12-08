@@ -50,10 +50,12 @@
     ".config/waybar".source = ./roy-config/waybar;
     ".config/fish".source = ./roy-config/fish;
     ".config/alacritty".source = ./roy-config/alacritty;
-    ".local/share/PrismLauncher/instances/1.21.6/minecraft/options.txt".source = ./roy-config/PrismLauncher/instances/1.21.6/minecraft/options.txt;
-    ".local/share/PrismLauncher/instances/1.21.6/minecraft/servers.dat".source = ./roy-config/PrismLauncher/instances/1.21.6/minecraft/servers.dat;
+    ".local/share/PrismLauncher/instances/1.21.6/minecraft/options.txt".source =
+      ./roy-config/PrismLauncher/instances/1.21.6/minecraft/options.txt;
+    ".local/share/PrismLauncher/instances/1.21.6/minecraft/servers.dat".source =
+      ./roy-config/PrismLauncher/instances/1.21.6/minecraft/servers.dat;
   };
-  
+
   # user persisted dirs
   home.persistence."/persist/home/roy" = {
     directories = [
@@ -100,7 +102,7 @@
           ebay.metaData.hidden = true;
           ddgc = {
             name = "DuckDuckGo (unthemed)";
-            urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
+            urls = [ { template = "https://duckduckgo.com/?q={searchTerms}"; } ];
             icon = "https://duckduckgo.com/favicon.ico";
           };
         };
@@ -108,9 +110,9 @@
 
       extensions.force = true;
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
-	      ublock-origin
+        ublock-origin
         vimium-c
-	    ];
+      ];
       extensions.settings."uBlock0@raymondhill.net".settings = {
         selectedFilterLists = [
           "ublock-filters"
@@ -309,8 +311,6 @@
       }
     ];
 
-    
-
     plugins = {
       lualine.enable = true;
       lsp-lines.enable = true;
@@ -321,16 +321,16 @@
         inlayHints = true;
 
         servers = {
-	        html.enable = true;
-	        lua_ls.enable = true;
-	        nil_ls.enable = true;
-	        ts_ls.enable = true;
-	        marksman.enable = true;
-	        pyright.enable = true;
+          html.enable = true;
+          lua_ls.enable = true;
+          nil_ls.enable = true;
+          ts_ls.enable = true;
+          marksman.enable = true;
+          pyright.enable = true;
           gopls.enable = true;
-	        terraformls.enable = true;
+          terraformls.enable = true;
           jsonls.enable = true;
-	        yamlls.enable = true;
+          yamlls.enable = true;
 
           rust_analyzer = {
             enable = true;
@@ -389,7 +389,7 @@
             };
           };
 
-	        diagnostic = {
+          diagnostic = {
             "<leader>cd" = {
               action = "open_float";
               desc = "Line Diagnostics";
@@ -420,10 +420,10 @@
         autoEnableSources = true;
         settings = {
           sources = [
-            {name = "nvim_lsp";}
-            {name = "path";}
-            {name = "buffer";}
-            {name = "luasnip";}
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "buffer"; }
+            { name = "luasnip"; }
           ];
           mapping = {
             "<C-Space>" = "cmp.mapping.complete()";
@@ -438,23 +438,23 @@
       };
     };
     extraConfigLua = ''
-      local _border = "rounded"
+            local _border = "rounded"
 
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover, {
-          border = _border
-        }
-      )
+            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+              vim.lsp.handlers.hover, {
+                border = _border
+              }
+            )
 
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help, {
-	        border = _border
-	      }
-      )
+            vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+              vim.lsp.handlers.signature_help, {
+      	        border = _border
+      	      }
+            )
 
-      vim.diagnostic.config{
-      	float={border=_border}
-      };
+            vim.diagnostic.config{
+            	float={border=_border}
+            };
     '';
 
     colorschemes.catppuccin = {
