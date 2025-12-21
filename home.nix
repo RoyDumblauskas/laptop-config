@@ -16,6 +16,7 @@
     git-filter-repo
     go
     grim
+    jq
     kdePackages.gwenview
     minio-client
     nodejs_22
