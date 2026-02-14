@@ -1,17 +1,14 @@
-let
-  release = "25.11";
-in
 {
   description = "System Wide Config Controller";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-${release}";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-${release}";
+      url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-${release}";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
