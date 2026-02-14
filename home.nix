@@ -59,7 +59,7 @@
   };
 
   # user persisted dirs
-  home.persistence."/persist/home/roy" = {
+  home.persistence."/persist" = {
     directories = [
       ".ssh"
       "rp"
@@ -79,7 +79,6 @@
       ".local/share/PrismLauncher/instances/1.21.6/mmc-pack.json"
 
     ];
-    allowOther = true;
   };
 
   # User services must come after sops secrets
