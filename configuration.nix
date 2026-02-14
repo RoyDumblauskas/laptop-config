@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [ ];
@@ -14,7 +19,7 @@
     efiSupport = true;
     efiInstallAsRemovable = true;
     mirroredBoots = [
-      { 
+      {
         devices = [ "nodev" ];
         path = "/boot";
       }
@@ -117,7 +122,10 @@
   users.users.roy = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
     shell = pkgs.fish;
   };
 
@@ -126,13 +134,17 @@
     zfs rollback -r zroot/root@blank
   '';
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   # Declare system wide pkgs
   environment.systemPackages = with pkgs; [
-    gimp
     alacritty
+    gimp
+    neofetch
     rose-pine-hyprcursor
     vim
     wget
@@ -157,8 +169,8 @@
 
     steam = {
       enable = true;
-      remotePlay.openFirewall = true;       
-      dedicatedServer.openFirewall = true;      
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
     };
   };
@@ -222,4 +234,3 @@
   system.stateVersion = "24.11";
 
 }
-
