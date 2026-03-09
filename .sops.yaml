@@ -1,11 +1,13 @@
 keys:
-  - &user_roy age1zad0qu648dhjav4pzjhkc6vswnqtacuv9230xcgle8wmv56r8ykqn0ud7y
+  - &laptop_roy age1zad0qu648dhjav4pzjhkc6vswnqtacuv9230xcgle8wmv56r8ykqn0ud7y
+  - &laptop_system age1awcm4kpq9zpl2fwxuktmxkwuse5reup2rfzrdsnh643ahy7ncgcq6e6ey2
   - &desktop_roy age1rwugh86469664fwhgrj9xuhjxs9vpflx3r0ftuvd0glphf2gecfs8thxsj
-  - &system age1awcm4kpq9zpl2fwxuktmxkwuse5reup2rfzrdsnh643ahy7ncgcq6e6ey2
+  - &desktop_system age1q79gcucm8htjnlgvyl0k8lfftdnyg77sxxk9jynn84zkx44ygqqsdq3p8u
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
-          - *user_roy
+          - *laptop_roy
+          - *laptop_system
           - *desktop_roy
-          - *system
+          - *desktop_system
