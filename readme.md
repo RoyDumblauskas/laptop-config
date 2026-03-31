@@ -2,5 +2,7 @@
 
 ## Todo:
 
-- Implement sops for secrets
-- Change repo to public (Make sure to squash to delete secret history)
+- Map of different systems (laptop vs desktop) & figure out how much separation should exist between them. At least networking ID/hostname.
+- GPU on the desktop?
+- Screen order with dual monitors
+
