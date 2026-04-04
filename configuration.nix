@@ -18,6 +18,7 @@
     zfsSupport = true;
     efiSupport = true;
     efiInstallAsRemovable = true;
+    configurationLimit = 25;
     mirroredBoots = [
       {
         devices = [ "nodev" ];
