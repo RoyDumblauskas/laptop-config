@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  meta,
   ...
 }:
 
@@ -56,8 +57,8 @@
     };
   };
 
-  networking.hostName = "roy-laptop";
-  networking.hostId = "4cb9fc76";
+  networking.hostName = meta.hostname;
+  networking.hostId = meta.hostId;
 
   networking = {
     useDHCP = true;
@@ -116,7 +117,7 @@
   users.mutableUsers = false;
   users.users.roy = {
     isNormalUser = true;
-    hashedPassword = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
+    hashedPassword = meta.hashedPass;
     extraGroups = [
       "wheel"
       "networkmanager"

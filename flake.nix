@@ -37,32 +37,58 @@
       sops-nix,
       firefox-addons,
     }@inputs:
+    # Place all config differences between laptop/desktop here
+    # If they grow sufficiently different, maybe split them out completely
+    let
+      platforms = [
+        {
+          name = "roy-laptop";
+          hostId = "4cb9fc76";
+          hashedPass = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
+        }
+        {
+          name = "roy-desktop";
+          hostId = "67cf9bc4";
+          hashedPass = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
+        }
+      ];
+    in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-          ./hardware-configuration.nix
-          ./disk-config.nix
-          disko.nixosModules.disko
-          impermanence.nixosModules.impermanence
-          sops-nix.nixosModules.sops
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.roy =
-              { ... }:
+      nixosConfigurations = builtins.listToAttrs (
+        map (platform: {
+          name = platform.name;
+          value = nixpkgs.lib.nixosSystem {
+            specialArgs.meta = {
+              hostname = platform.name;
+              hostId = platform.hostId;
+              hashedPass = platform.hashedPass;
+            };
+            system = "x86_64-linux";
+            modules = [
+              ./configuration.nix
+              ./hardware-configuration.nix
+              ./disk-config.nix
+              disko.nixosModules.disko
+              impermanence.nixosModules.impermanence
+              sops-nix.nixosModules.sops
+              home-manager.nixosModules.home-manager
               {
-                imports = [
-                  ./home.nix
-                  nixvim.homeModules.nixvim
-                  sops-nix.homeManagerModules.sops
-                ];
-              };
-          }
-        ];
-      };
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.extraSpecialArgs = { inherit inputs; };
+                home-manager.users.roy =
+                  { ... }:
+                  {
+                    imports = [
+                      ./home.nix
+                      nixvim.homeModules.nixvim
+                      sops-nix.homeManagerModules.sops
+                    ];
+                  };
+              }
+            ];
+          };
+        }) platforms
+      );
     };
 }
