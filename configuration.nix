@@ -130,10 +130,20 @@
     zfs rollback -r zroot/root@blank
   '';
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    gc = {
+      automatic = true;
+      persistent = true;
+      dates = [ "daily" ];
+      options = "--delete-older-than 7d";
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # Declare system wide pkgs
@@ -188,18 +198,9 @@
     ];
   };
 
-  services.postgresql = {
-    enable = true;
-
-    identMap = ''
-      postgres roy postgres
-    '';
-  };
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
   # INITIAL system version
