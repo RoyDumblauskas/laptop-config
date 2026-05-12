@@ -25,6 +25,7 @@
     python3
     slurp
     sops
+    spotify
     ssh-to-age
     tree
     tmux
