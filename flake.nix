@@ -49,7 +49,7 @@
         {
           name = "roy-desktop";
           hostId = "67cf9bc4";
-          hashedPass = "$y$j9T$4yOAv6R7Xtn23XmhSSC8g.$T1CckfWgxjEyZshjBzcaMO9WidP.q..OG7LwtXFTw12";
+          hashedPass = "$y$j9T$6u38YtgJqXZ6Yq11mIZq//$SyZo1UEj5csiElp3a2zoDbdFGCdYktel09lfIkgKKd0";
         }
       ];
     in
