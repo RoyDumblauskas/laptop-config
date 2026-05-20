@@ -51,6 +51,7 @@
   # user program config files
   home.file = {
     ".config/hypr".source = ./roy-config/hypr;
+    ".config/spotify/prefs".source = ./roy-config/spotify/prefs;
     ".config/waybar".source = ./roy-config/waybar;
     ".config/fish".source = ./roy-config/fish;
     ".config/alacritty".source = ./roy-config/alacritty;
@@ -58,6 +59,7 @@
       ./roy-config/PrismLauncher/instances/1.21.6/minecraft/options.txt;
     ".local/share/PrismLauncher/instances/1.21.6/minecraft/servers.dat".source =
       ./roy-config/PrismLauncher/instances/1.21.6/minecraft/servers.dat;
+
   };
 
   # user persisted dirs
