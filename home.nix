@@ -67,9 +67,6 @@
       "dl"
       ".mozilla/firefox/roy/storage/default"
       ".cache/mozilla/firefox/roy"
-      # don't wanna login every time
-      ".cache/spotify"
-      ".config/spotify"
       # persist steam
       ".local/share/Steam"
     ];
