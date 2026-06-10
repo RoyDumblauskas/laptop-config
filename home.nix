@@ -45,6 +45,13 @@
       user.name = "Roy Dumblauskas";
       user.email = "roydumblauskas@gmail.com";
     };
+
+    alias = {
+      gp = "push";
+      gc = "commit -am";
+      ga = "git add .";
+      gs = "git status";
+    };
   };
 
   # user program config files
@@ -78,7 +85,6 @@
       ".local/share/PrismLauncher/accounts.json"
       ".local/share/PrismLauncher/instances/1.21.6/instance.cfg"
       ".local/share/PrismLauncher/instances/1.21.6/mmc-pack.json"
-
     ];
   };
 
