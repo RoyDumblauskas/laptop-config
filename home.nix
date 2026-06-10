@@ -44,14 +44,15 @@
     settings = {
       user.name = "Roy Dumblauskas";
       user.email = "roydumblauskas@gmail.com";
+
+      alias = {
+        gp = "push";
+        gc = "commit -am";
+        ga = "git add .";
+        gs = "git status";
+      };
     };
 
-    aliases = {
-      gp = "push";
-      gc = "commit -am";
-      ga = "git add .";
-      gs = "git status";
-    };
   };
 
   # user program config files
@@ -94,6 +95,7 @@
   # Configure firefox to be resilient against reboot
   # Source = https://github.com/johnmpost/nixos-config
   programs.firefox = {
+    configPath = ".mozilla/firefox";
     enable = true;
 
     profiles.roy = {
