@@ -46,7 +46,7 @@
       user.email = "roydumblauskas@gmail.com";
     };
 
-    alias = {
+    aliases = {
       gp = "push";
       gc = "commit -am";
       ga = "git add .";
