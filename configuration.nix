@@ -126,9 +126,25 @@
   };
 
   # Delete root on reboot
-  boot.initrd.postMountCommands = lib.mkAfter ''
-    zfs rollback -r zroot/root@blank
-  '';
+  boot.initrd.systemd.services = {
+    rollback = {
+      description = "Rollback root zfs dataset to blank snapshot";
+      wantedBy = [ "initrd.target" ];
+      before = [ "sysroot.mount" ];
+      after = [ "zfs-import-zroot.service" ];
+      path = with pkgs; [
+        zfs
+      ];
+
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = ''
+          zfs rollback -r zroot/root@blank && echo "blank rollback complete"
+        '';
+      };
+
+    };
+  };
 
   nix = {
     settings.experimental-features = [
@@ -150,7 +166,6 @@
   environment.systemPackages = with pkgs; [
     alacritty
     gimp
-    neofetch
     rose-pine-hyprcursor
     vim
     wget

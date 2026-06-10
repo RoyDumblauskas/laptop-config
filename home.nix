@@ -34,7 +34,7 @@
     wl-clipboard
     woeusb
     wofi
-    xorg.xrandr
+    xrandr
     yq-go
     zip
   ];
