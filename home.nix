@@ -142,8 +142,8 @@
 
       font = {
         normal.family = "UbuntuMono Nerd Font";
-        normal.italic = "UbuntuMono Nerd Font";
-        normal.bold = "UbuntuMono Nerd Font";
+        italic.family = "UbuntuMono Nerd Font";
+        bold.family = "UbuntuMono Nerd Font";
         size = 16;
       };
 
