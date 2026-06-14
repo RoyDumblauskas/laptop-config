@@ -138,11 +138,11 @@ for i = 1, 10 do
   hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- move workspace to unfocused monitor (two monitors only)
-hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("~/.config/hypr/scripts/move-workspace-to-unfocused-monitor.sh"))
-
 -- focus on unfocused monitor (2 monitors only)
-hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus-unfocused-monitor.sh"))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("~/.config/hypr/scripts/focus-unfocused-monitor.sh"))
+
+-- move workspace to unfocused monitor (two monitors only)
+hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("~/.config/hypr/scripts/move-workspace-to-unfocused-monitor.sh"))
 
 -- screenshot
 hl.bind(mainMod .. " + SHIFT + s", hl.dsp.exec_cmd("grim -g '$(slurp -d)' - | wl-copy"))
