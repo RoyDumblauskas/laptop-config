@@ -115,13 +115,6 @@ hl.config({
 -- keybinds
 local mainMod = "SUPER"
 
-local function get_unfocused_monitor()
-  local monitor = hl.exec_cmd(
-    "hyprctl monitors -j | jq -r '[.[] | select(.focused == false) | .name][0]'"
-  )
-  return "'" .. monitor .. "'"
-end
-
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
@@ -146,10 +139,7 @@ for i = 1, 10 do
 end
 
 -- move workspace to unfocused monitor (two monitors only)
-hl.bind(mainMod .. " + TAB", function()
-  local toMonitor = get_unfocused_monitor()
-  hl.dsp.workspace.move({ monitor = toMonitor })
-end)
+hl.bind(mainMod .. " + TAB", hl.exec_cmd("~/.config/hypr/scripts/move-workspace-to-unfocused-monitor.sh"))
 
 -- focus on unfocused monitor (2 monitors only)
 hl.bind(mainMod .. " + SHIFT + TAB", function()
