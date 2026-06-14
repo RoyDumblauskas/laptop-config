@@ -89,7 +89,7 @@ hl.config({
 hl.config({
   misc = {
     force_default_wallpaper = 0,
-    disable_hyprland_logo = false
+    disable_hyprland_logo = true
   }
 })
 
@@ -114,7 +114,16 @@ hl.config({
 -- keybinds
 local mainMod = "SUPER"
 
+local function get_unfocused_monitor()
+  local monitor = hl.exec_cmd(
+    [[hyprctl monitors -j | jq -r '[.[] | select(.focused == false) | .name][0]']]
+  )
+
+  return monitor:gsub("%s+$", "")
+end
+
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
@@ -138,15 +147,21 @@ end
 
 -- move workspace to unfocused monitor (two monitors only)
 hl.bind(mainMod .. " + TAB", function()
-  local toMonitor = hl.exec_cmd("hyprctl monitors -j | jq -r 'first(.[] | select(.focused == false) | .name)'")
+  local toMonitor = get_unfocused_monitor()
   hl.dsp.workspace.move({ monitor = toMonitor })
 end)
 
 -- focus on unfocused monitor (2 monitors only)
 hl.bind(mainMod .. " + SHIFT + TAB", function()
-  local toMonitor = hl.exec_cmd("hyprctl monitors -j | jq -r 'first(.[] | select(.focused == false) | .name)'")
+  local toMonitor = get_unfocused_monitor()
   hl.dsp.focus({ monitor = toMonitor })
 end)
+
+-- screenshot
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g '$(slurp -d)' - | wl-copy"))
+
+-- fullscreen
+hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
