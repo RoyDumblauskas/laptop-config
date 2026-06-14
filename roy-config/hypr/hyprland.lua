@@ -119,7 +119,7 @@ local function get_unfocused_monitor()
   local monitor = hl.exec_cmd(
     "hyprctl monitors -j | jq -r '[.[] | select(.focused == false) | .name][0]'"
   )
-  return monitor
+  return "'" .. monitor .. "'"
 end
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
@@ -158,7 +158,7 @@ hl.bind(mainMod .. " + SHIFT + TAB", function()
 end)
 
 -- screenshot
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g '$(slurp -d)' - | wl-copy"))
+hl.bind(mainMod .. " + SHIFT + s", hl.dsp.exec_cmd("grim -g '$(slurp -d)' - | wl-copy"))
 
 -- fullscreen
 hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.fullscreen({ action = "toggle" }))
