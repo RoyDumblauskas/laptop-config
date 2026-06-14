@@ -89,7 +89,8 @@ hl.config({
 hl.config({
   misc = {
     force_default_wallpaper = 0,
-    disable_hyprland_logo = true
+    disable_hyprland_logo = true,
+    disable_splash_rendering = true
   }
 })
 
@@ -116,10 +117,9 @@ local mainMod = "SUPER"
 
 local function get_unfocused_monitor()
   local monitor = hl.exec_cmd(
-    [[hyprctl monitors -j | jq -r '[.[] | select(.focused == false) | .name][0]']]
+    "hyprctl monitors -j | jq -r '[.[] | select(.focused == false) | .name][0]'"
   )
-
-  return monitor:gsub("%s+$", "")
+  return monitor
 end
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
