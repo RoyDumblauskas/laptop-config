@@ -142,10 +142,7 @@ end
 hl.bind(mainMod .. " + TAB", hl.exec_cmd("~/.config/hypr/scripts/move-workspace-to-unfocused-monitor.sh"))
 
 -- focus on unfocused monitor (2 monitors only)
-hl.bind(mainMod .. " + SHIFT + TAB", function()
-  local toMonitor = get_unfocused_monitor()
-  hl.dsp.focus({ monitor = toMonitor })
-end)
+hl.bind(mainMod .. " + SHIFT + TAB", hl.exec_cmd("~/.config/hypr/scripts/focus-unfocused-monitor.sh"))
 
 -- screenshot
 hl.bind(mainMod .. " + SHIFT + s", hl.dsp.exec_cmd("grim -g '$(slurp -d)' - | wl-copy"))
