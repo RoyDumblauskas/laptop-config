@@ -128,28 +128,25 @@
   };
 
   boot.zfs.forceImportRoot = false;
-  /*
-    # Delete root on reboot disable for now while broken
-      boot.initrd.systemd.services = {
-        rollback = {
-          description = "Rollback root zfs dataset to blank snapshot";
-          wantedBy = [ "initrd.target" ];
-          before = [ "sysroot.mount" ];
-          after = [ "zfs-import-zroot.service" ];
-          path = with pkgs; [
-            zfs
-          ];
+  # Delete root on reboot disable for now while broken
+  boot.initrd.systemd.services = {
+    rollback = {
+      description = "Rollback root zfs dataset to blank snapshot";
+      wantedBy = [ "initrd.target" ];
+      before = [ "sysroot.mount" ];
+      after = [ "zfs-import-zroot.service" ];
+      path = with pkgs; [
+        zfs
+      ];
 
-          serviceConfig = {
-            Type = "oneshot";
-            ExecStart = ''
-              zfs rollback -r zroot/root@blank && echo "blank rollback complete"
-            '';
-          };
-
-        };
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = ''
+          zfs rollback -r zroot/root@blank && echo "blank rollback complete"
+        '';
       };
-  */
+    };
+  };
 
   nix = {
     settings.experimental-features = [
