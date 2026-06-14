@@ -123,7 +123,7 @@
                   continue
               end
 
-              string join / -- (string replace -ar -- '(\.?[^/]{'"$fish_prompt_pwd_dir_length"'})[^/]*/' '$1/' $tmp) $full
+              string join / -- (string replace -ar -- '(\.?[^/]{'"100"'})[^/]*/' '$1/' $tmp) $full
           end
       end
     '';
