@@ -150,7 +150,7 @@
 
   programs.alacritty = {
     enable = true;
-    theme = "catpuccin_frappe";
+    theme = "catppuccin_frappe";
 
     settings = {
       terminal.shell = "fish";
