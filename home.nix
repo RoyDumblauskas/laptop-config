@@ -107,24 +107,12 @@
           set -l realhome (string escape --style=regex -- ~)
           set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $path)
 
-          if test "$fish_prompt_pwd_dir_length" -eq 0
-              echo $tmp
-          else
-              # Shorten to at most 100 characters per directory
-              # with full-length-dirs components left at full length.
-              set -l full
-              if test $fish_prompt_pwd_full_dirs -gt 0
-                  set -l all (string split -m (math 100 - 1) -r / $tmp)
-                  set tmp $all[1]
-                  set full $all[2..]
-              else if test $fish_prompt_pwd_full_dirs -eq 0
-                  # 0 means not even the last component is kept
-                  string replace -ar '(\.?[^/]{'"100"'})[^/]*' '$1' $tmp
-                  continue
-              end
+          set -l full
+          set -l all (string split -m (math $fish_prompt_pwd_full_dirs - 1) -r / $tmp)
+          set tmp $all[1]
+          set full $all[2..]
 
-              string join / -- (string replace -ar -- '(\.?[^/]{'"100"'})[^/]*/' '$1/' $tmp) $full
-          end
+          string join / -- (string replace -ar -- '(\.?[^/]{'"100"'})[^/]*/' '$1/' $tmp) $full
       end
     '';
   };
