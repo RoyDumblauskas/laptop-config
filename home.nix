@@ -174,7 +174,6 @@
   home.file = {
     ".config/hypr".source = ./roy-config/hypr;
     ".config/waybar".source = ./roy-config/waybar;
-    ".config/alacritty".source = ./roy-config/alacritty;
     ".local/share/PrismLauncher/instances/1.21.6/minecraft/options.txt".source =
       ./roy-config/PrismLauncher/instances/1.21.6/minecraft/options.txt;
     ".local/share/PrismLauncher/instances/1.21.6/minecraft/servers.dat".source =
