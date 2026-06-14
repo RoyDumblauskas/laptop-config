@@ -87,8 +87,10 @@ hl.config({
 
 -- misc
 hl.config({
-  force_default_wallpaper = 0,
-  disable_hyprland_logo = false
+  misc = {
+    force_default_wallpaper = 0,
+    disable_hyprland_logo = false
+  }
 })
 
 -- input
@@ -122,10 +124,10 @@ hl.bind(mainMod .. " + M",
   hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 -- move focus
-hl.bind(mainMod .. "h", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. "j", hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. "k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. "l", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 
 -- switch/move workspaces
 for i in 1, 10 do
