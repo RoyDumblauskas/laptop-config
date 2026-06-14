@@ -115,9 +115,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Enable legacy dbus impl
-  services.dbus.implementation = "dbus";
-
   # Define users
   users.mutableUsers = false;
   users.users.roy = {
