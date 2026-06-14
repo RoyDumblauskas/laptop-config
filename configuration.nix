@@ -53,6 +53,8 @@
         sopsFile = ./secrets/networking.yaml;
         key = "networkPasswords";
         format = "yaml";
+        owner = "wpa_supplicant";
+        group = "wpa_supplicant";
       };
     };
   };
