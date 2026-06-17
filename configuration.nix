@@ -136,7 +136,10 @@
       wantedBy = [ "initrd.target" ];
       before = [ "sysroot.mount" ];
       after = [ "zfs-import-zroot.service" ];
-      path = with pkgs; [ zfs ];
+      path = with pkgs; [
+        coreutils
+        zfs
+      ];
 
       unitConfig.DefaultDependencies = "no";
       serviceConfig.Type = "oneshot";
