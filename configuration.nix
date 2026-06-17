@@ -135,14 +135,12 @@
       wantedBy = [ "initrd.target" ];
       before = [ "sysroot.mount" ];
       after = [ "zfs-import-zroot.service" ];
-      path = with pkgs; [
-        zfs
-      ];
 
       serviceConfig = {
         Type = "oneshot";
-        ExecStart = ''
-          zfs rollback -r zroot/root@blank && echo "blank rollback complete"
+        ExecStart = pkgs.writeShellScript "delete-root" ''
+          ${pkgs.zfs}/bin/zfs rollback -r zroot/root@blank 
+          echo "blank rollback complete"
         '';
       };
     };
