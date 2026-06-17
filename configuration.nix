@@ -128,6 +128,7 @@
   };
 
   boot.zfs.forceImportRoot = false;
+
   # Delete root on reboot disable for now while broken
   boot.initrd.systemd.services = {
     rollback = {
@@ -135,14 +136,14 @@
       wantedBy = [ "initrd.target" ];
       before = [ "sysroot.mount" ];
       after = [ "zfs-import-zroot.service" ];
+      path = with pkgs; [ zfs ];
 
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = pkgs.writeShellScript "delete-root" ''
-          ${pkgs.zfs}/bin/zfs rollback -r zroot/root@blank 
-          echo "blank rollback complete"
-        '';
-      };
+      unitConfig.DefaultDependencies = "no";
+      serviceConfig.Type = "oneshot";
+
+      script = ''
+        zfs rollback -r zroot/root@blank && echo "blank rollback complete" | tee /dev/kmsg
+      '';
     };
   };
 
