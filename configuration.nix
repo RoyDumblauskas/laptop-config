@@ -47,12 +47,13 @@
     age.generateKey = true;
     defaultSopsFormat = "json";
 
-    # test secrets
     secrets = {
       "networkPasswords" = {
         sopsFile = ./secrets/networking.yaml;
         key = "networkPasswords";
         format = "yaml";
+
+        # let the service that needs the secrets own them
         owner = "wpa_supplicant";
         group = "wpa_supplicant";
       };
@@ -136,16 +137,14 @@
       wantedBy = [ "initrd.target" ];
       before = [ "sysroot.mount" ];
       after = [ "zfs-import-zroot.service" ];
-      path = with pkgs; [
-        coreutils
-        zfs
-      ];
+      path = [ pkgs.zfs ];
 
       unitConfig.DefaultDependencies = "no";
       serviceConfig.Type = "oneshot";
 
       script = ''
-        zfs rollback -r zroot/root@blank && echo "blank rollback complete" | tee /dev/kmsg
+        zfs rollback -r zroot/root@blank
+        echo "blank rollback complete" > /dev/kmsg
       '';
     };
   };

@@ -175,6 +175,8 @@
       ".cache/mozilla/firefox/roy"
       # persist steam
       ".local/share/Steam"
+      # persist spotify
+      ".config/spotify"
     ];
     files = [
       ".bash_history"
