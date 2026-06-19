@@ -122,15 +122,7 @@
     settings = {
       user.name = "Roy Dumblauskas";
       user.email = "roydumblauskas@gmail.com";
-
-      alias = {
-        gp = "push";
-        gc = "commit -am";
-        ga = "git add .";
-        gs = "git status";
-      };
     };
-
   };
 
   programs.alacritty = {
@@ -171,17 +163,14 @@
       ".ssh"
       "rp"
       "dl"
-      ".mozilla/firefox/roy/storage/default"
-      ".cache/mozilla/firefox/roy"
       # persist steam
       ".local/share/Steam"
       # persist spotify
       ".config/spotify"
+      ".cache/spotify"
     ];
     files = [
       ".bash_history"
-      ".mozilla/firefox/roy/places.sqlite"
-      ".mozilla/firefox/roy/cookies.sqlite"
       ".config/sops/age/keys.txt"
       ".local/share/PrismLauncher/accounts.json"
       ".local/share/PrismLauncher/instances/1.21.6/instance.cfg"
@@ -195,7 +184,6 @@
   # Configure firefox to be resilient against reboot
   # Source = https://github.com/johnmpost/nixos-config
   programs.firefox = {
-    configPath = ".mozilla/firefox";
     enable = true;
 
     profiles.roy = {
