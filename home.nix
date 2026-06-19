@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 
 {
 
@@ -185,6 +190,8 @@
   # Source = https://github.com/johnmpost/nixos-config
   programs.firefox = {
     enable = true;
+
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     profiles.roy = {
       search = {
