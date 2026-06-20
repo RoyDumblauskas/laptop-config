@@ -6,12 +6,14 @@
 }:
 
 {
+
+  # import longer service declarations
   imports = [
-    ./home-programs/alacritty.nix
-    ./home-programs/firefox.nix
-    ./home-programs/fish.nix
-    ./home-programs/git.nix
-    ./home-programs/nixvim.nix
+    ./home-manager-programs/alacritty.nix
+    ./home-manager-programs/firefox.nix
+    ./home-manager-programs/fish.nix
+    ./home-manager-programs/git.nix
+    ./home-manager-programs/nixvim.nix
   ];
 
   home.username = "roy";
