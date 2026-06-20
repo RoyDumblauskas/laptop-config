@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   meta,
   ...
@@ -53,7 +52,6 @@
         key = "networkPasswords";
         format = "yaml";
 
-        # let the service that needs the secrets own them
         owner = "wpa_supplicant";
         group = "wpa_supplicant";
       };
