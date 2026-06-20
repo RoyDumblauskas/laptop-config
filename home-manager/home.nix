@@ -55,12 +55,12 @@
 
   # user program config files
   home.file = {
-    ".config/hypr".source = ./roy-config/hypr;
-    ".config/waybar".source = ./roy-config/waybar;
+    ".config/hypr".source = ../roy-config/hypr;
+    ".config/waybar".source = ../roy-config/waybar;
     ".local/share/PrismLauncher/instances/1.21.6/minecraft/options.txt".source =
-      ./roy-config/PrismLauncher/instances/1.21.6/minecraft/options.txt;
+      ../roy-config/PrismLauncher/instances/1.21.6/minecraft/options.txt;
     ".local/share/PrismLauncher/instances/1.21.6/minecraft/servers.dat".source =
-      ./roy-config/PrismLauncher/instances/1.21.6/minecraft/servers.dat;
+      ../roy-config/PrismLauncher/instances/1.21.6/minecraft/servers.dat;
   };
 
   # user persisted dirs
