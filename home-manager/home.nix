@@ -1,19 +1,10 @@
-{
-  pkgs,
-  inputs,
-  config,
-  ...
-}:
+{ pkgs, ... }:
 
 {
 
   # import longer service declarations
   imports = [
-    ./alacritty.nix
-    ./firefox.nix
-    ./fish.nix
-    ./git.nix
-    ./nixvim.nix
+    ./programs
   ];
 
   home.username = "roy";
