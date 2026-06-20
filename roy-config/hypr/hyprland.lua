@@ -146,7 +146,7 @@ hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("~/.config/hypr/scripts/mov
 
 -- screenshot
 hl.bind(mainMod .. " + SHIFT + s",
-  hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | tee /home/$USER/scrot/$(date +"%F_%T").png | wl-copy'))
+  hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | tee /home/$USER/dl/$(date +"%F_%T").png | wl-copy'))
 
 -- fullscreen
 hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.fullscreen({ action = "toggle" }))
