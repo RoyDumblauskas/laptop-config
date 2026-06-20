@@ -6,8 +6,9 @@
       ga = "git add .";
       gc = "git commit -am";
       gp = "git push";
+      gpl = "git pull";
       gpr = "git pull --rebase";
-      gl = "git pull";
+      gl = "git log";
     };
 
     functions = {
