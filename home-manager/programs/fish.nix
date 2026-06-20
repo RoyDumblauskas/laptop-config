@@ -9,6 +9,7 @@
       gpl = "git pull";
       gpr = "git pull --rebase";
       gl = "git log";
+      shypr = "start-hyprland";
     };
 
     functions = {
