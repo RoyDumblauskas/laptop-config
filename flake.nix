@@ -79,7 +79,7 @@
                   { ... }:
                   {
                     imports = [
-                      ./home.nix
+                      ./home-manager/home.nix
                       nixvim.homeModules.nixvim
                       sops-nix.homeManagerModules.sops
                     ];

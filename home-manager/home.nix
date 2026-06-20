@@ -9,11 +9,11 @@
 
   # import longer service declarations
   imports = [
-    ./home-manager-programs/alacritty.nix
-    ./home-manager-programs/firefox.nix
-    ./home-manager-programs/fish.nix
-    ./home-manager-programs/git.nix
-    ./home-manager-programs/nixvim.nix
+    ./alacritty.nix
+    ./firefox.nix
+    ./fish.nix
+    ./git.nix
+    ./nixvim.nix
   ];
 
   home.username = "roy";

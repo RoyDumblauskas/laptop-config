@@ -159,7 +159,7 @@
       automatic = true;
       persistent = true;
       dates = [ "daily" ];
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 7d";
     };
   };
 
