@@ -7,10 +7,11 @@
 
 {
   imports = [
+    ./home-programs/alacritty.nix
+    ./home-programs/firefox.nix
     ./home-programs/fish.nix
     ./home-programs/git.nix
     ./home-programs/nixvim.nix
-    ./home-programs/firefox.nix
   ];
 
   home.username = "roy";
