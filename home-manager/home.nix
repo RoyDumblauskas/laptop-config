@@ -58,6 +58,8 @@
       "dl"
       # persist steam
       ".local/share/Steam"
+      # persist mc version
+      ".local/share/PrismLauncher/instances/26.2"
       # persist spotify
       ".config/spotify"
       ".cache/spotify"
@@ -65,6 +67,8 @@
     files = [
       ".bash_history"
       ".config/sops/age/keys.txt"
+      # Persist mc login
+      ".local/share/PrismLauncher/accounts.json"
     ];
   };
 
