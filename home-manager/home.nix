@@ -48,10 +48,6 @@
   home.file = {
     ".config/hypr".source = ../roy-config/hypr;
     ".config/waybar".source = ../roy-config/waybar;
-    ".local/share/PrismLauncher/instances/26.2/minecraft/options.txt".source =
-      ../roy-config/PrismLauncher/instances/26.2/minecraft/options.txt;
-    ".local/share/PrismLauncher/instances/26.2/minecraft/servers.dat".source =
-      ../roy-config/PrismLauncher/instances/26.2/minecraft/servers.dat;
   };
 
   # user persisted dirs
@@ -70,8 +66,6 @@
       ".bash_history"
       ".config/sops/age/keys.txt"
       ".local/share/PrismLauncher/accounts.json"
-      ".local/share/PrismLauncher/instances/26.2/instance.cfg"
-      ".local/share/PrismLauncher/instances/26.2/mmc-pack.json"
     ];
   };
 
