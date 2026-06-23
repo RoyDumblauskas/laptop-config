@@ -59,7 +59,7 @@
       # persist steam
       ".local/share/Steam"
       # persist mc version
-      ".local/share/PrismLauncher/instances/26.2"
+      ".local/share/PrismLauncher/instances"
       # persist spotify
       ".config/spotify"
       ".cache/spotify"
