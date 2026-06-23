@@ -65,7 +65,6 @@
     files = [
       ".bash_history"
       ".config/sops/age/keys.txt"
-      ".local/share/PrismLauncher/accounts.json"
     ];
   };
 
