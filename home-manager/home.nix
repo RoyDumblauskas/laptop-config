@@ -12,6 +12,7 @@
 
   home.packages = with pkgs; [
     age
+    anki
     awscli2
     dig
     discord
