@@ -75,7 +75,7 @@
         "Intelligentsia Public" = {
           priority = -1;
         };
-        "mojo dojo casa house" = {
+        "GL-MT6000-4b6-5G" = {
           pskRaw = "ext:homeNetwork";
         };
         "Galaxy S6 2279" = {
