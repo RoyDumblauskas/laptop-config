@@ -29,6 +29,7 @@
     postman
     prismlauncher
     python3
+    rcon
     slurp
     sops
     spotify

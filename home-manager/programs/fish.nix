@@ -11,6 +11,8 @@
       gl = "git log";
       shypr = "start-hyprland";
       nixrb = "sudo nixos-rebuild switch --flake";
+
+      hscon = "rcon -H 192.168.8.182 -p 25575 -P 'CHANGE_THIS_SECRET'";
     };
 
     functions = {
