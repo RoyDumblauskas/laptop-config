@@ -27,7 +27,20 @@
     border-radius: 2px;
 }
 
-#wireplumber,
+#wireplumber#sink {
+    background-color: @background-alt;
+    border-radius: 3px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#wireplumber#source {
+    background-color: @background-alt;
+    border-radius: 3px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
 #bat,
 #net {
     background-color: @background-alt;
