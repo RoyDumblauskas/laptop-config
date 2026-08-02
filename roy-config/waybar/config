@@ -35,15 +35,30 @@
     "format": "{:%d.%m.%Y | %H:%M:%S}",
     "interval": 1
   },
-  "wireplumber": {
-    "format": "\udb81\udd7e  {volume}%",
-    "max-volume": 100,
+  "wireplumber#sink": {
+    "format": "{icon} {volume}%",
+    "format-muted": "\uf6a9",
+    "format-icons": [
+      "\uf026",
+      "\uf027",
+      "\uf028"
+    ],
+    "on-click": "~/.config/waybar/scripts/select-sink.sh",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 5
+  },
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": "\uf130 {volume}%",
+    "format-muted": "\uf131",
+    "on-click": "~/.config/waybar/scripts/select-source.sh",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "scroll-step": 5
   },
   "battery": {
     "bat": "BAT0",
     "interval": 60,
-    "format": "{icon}  {capacity}%",
+    "format": "{icon} {capacity}%",
     "format-icons": [
       "\uf244",
       "\uf243",
