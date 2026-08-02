@@ -10,7 +10,8 @@
     "clock"
   ],
   "modules-right": [
-    "wireplumber",
+    "wireplumber#sink",
+    "wireplumber#source",
     "group/bat",
     "group/net"
   ],
