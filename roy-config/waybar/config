@@ -38,9 +38,8 @@
   },
   "wireplumber#sink": {
     "format": "{icon} {volume}%",
-    "format-muted": "\uf6a9",
+    "format-muted": "\uf026",
     "format-icons": [
-      "\uf026",
       "\uf027",
       "\uf028"
     ],
