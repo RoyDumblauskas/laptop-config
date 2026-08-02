@@ -60,11 +60,9 @@
       "dl"
       # persist steam
       ".local/share/Steam"
-      # persist mc version
+      # Minecraft
       ".local/share/PrismLauncher/instances"
-      # persist spotify
-      ".config/spotify"
-      ".cache/spotify"
+      ".local/share/PrismLauncher/libraries"
     ];
     files = [
       ".bash_history"

@@ -1,0 +1,62 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+window {
+    margin: 0;
+    padding: 12px;
+    border: 2px solid #8caaee;
+    border-radius: 10px;
+    background-color: #303446;
+    color: #c6d0f5;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 0;
+}
+
+#input {
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #414559;
+    color: #c6d0f5;
+}
+
+#input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#scroll {
+    margin: 0;
+}
+
+#inner-box {
+    margin: 0;
+}
+
+#entry {
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: transparent;
+}
+
+#entry:selected {
+    background-color: #51576d;
+}
+
+#text {
+    color: #c6d0f5;
+}
+
+#entry:selected #text {
+    color: #8caaee;
+}
+
+#img {
+    margin-right: 8px;
+}
