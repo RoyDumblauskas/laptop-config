@@ -37,11 +37,10 @@
     "interval": 1
   },
   "wireplumber#sink": {
-    "format": "{icon} {volume}%",
-    "format-muted": "\uf026",
+    "format": "{icon}  {volume}%",
+    "format-muted": "\ueee8",
     "format-icons": [
-      "\uf027",
-      "\uf028"
+      "\uefcf"
     ],
     "on-click": "~/.config/waybar/scripts/select-sink.sh",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
