@@ -63,7 +63,7 @@
       ".local/share/Steam"
       # Minecraft
       ".local/share/PrismLauncher/instances"
-      ".local/share/PrismLauncher/libraries"
+      ".local/share/PrismLauncher/assets"
     ];
     files = [
       ".bash_history"
