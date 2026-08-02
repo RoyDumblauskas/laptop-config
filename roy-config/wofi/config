@@ -1,3 +1,7 @@
 style=/home/roy/.config/wofi/style.css
 color=/home/roy/.config/wofi/colors
 key_expand=space
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_left=Ctrl-h
+key_right=Ctrl-l

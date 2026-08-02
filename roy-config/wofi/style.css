@@ -1,45 +1,35 @@
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-family: "UbuntuMono Nerd Font", monospace;
     font-size: 14px;
 }
 
 window {
-    margin: 0;
-    padding: 12px;
-    border: 2px solid #8caaee;
-    border-radius: 10px;
     background-color: #303446;
     color: #c6d0f5;
+    border: 2px solid #8caaee;
 }
 
 #outer-box {
-    margin: 0;
-    padding: 0;
+    margin: 10px;
 }
 
 #input {
     margin-bottom: 10px;
     padding: 8px 10px;
+
+    background: #414559;
+    color: #c6d0f5;
+
     border: none;
     border-radius: 8px;
-    background-color: #414559;
-    color: #c6d0f5;
-}
-
-#input:focus {
-    outline: none;
-    box-shadow: none;
 }
 
 #scroll {
     margin: 0;
 }
 
-#inner-box {
-    margin: 0;
-}
-
 #entry {
+    margin: 2px 0;
     padding: 8px 10px;
     border-radius: 6px;
     background: transparent;
@@ -59,4 +49,36 @@ window {
 
 #img {
     margin-right: 8px;
+}
+
+label {
+    color: #c6d0f5;
+}
+
+image {
+    margin-right: 8px;
+}
+
+#entry {
+    background: transparent;
+    border-radius: 6px;
+}
+
+#entry:selected {
+    background: #51576d;
+}
+
+#entry:selected label,
+#entry:selected #text {
+    color: #8caaee;
+}
+
+#text {
+    color: #c6d0f5;
+}
+
+#expander-box,
+#expander {
+    background: transparent;
+    color: #c6d0f5;
 }
