@@ -50,6 +50,7 @@
   home.file = {
     ".config/hypr".source = ../roy-config/hypr;
     ".config/waybar".source = ../roy-config/waybar;
+    ".config/wofi".source = ../roy-config/wofi;
   };
 
   # user persisted dirs
