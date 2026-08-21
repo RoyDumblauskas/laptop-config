@@ -59,9 +59,11 @@
       ".ssh"
       "rp"
       "dl"
-      # persist steam
+      # persist steam (long download times)
       ".local/share/Steam"
-      # Minecraft
+      # persist spotify login
+      ".config/spotify"
+      # Minecraft (long download times)
       ".local/share/PrismLauncher/instances"
       ".local/share/PrismLauncher/assets"
     ];
