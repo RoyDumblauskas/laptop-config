@@ -19,6 +19,7 @@
     fish
     git
     grim
+    incus
     jq
     nodejs_22
     postman
