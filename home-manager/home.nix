@@ -14,6 +14,7 @@
     age
     anki
     awscli2
+    brightnessctl
     dig
     discord
     ffmpeg_6
