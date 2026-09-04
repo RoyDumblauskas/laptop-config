@@ -12,25 +12,18 @@
 
   home.packages = with pkgs; [
     age
-    anki
-    awscli2
     brightnessctl
     dig
     discord
     ffmpeg_6
     fish
     git
-    git-filter-repo
-    go
     grim
     jq
-    kdePackages.gwenview
-    minio-client
     nodejs_22
     postman
     prismlauncher
     python3
-    rcon
     slurp
     sops
     spotify
@@ -38,12 +31,10 @@
     tree
     tmux
     unzip
-    vlc
     wl-clipboard
     woeusb
     wofi
     xrandr
-    yq-go
     zip
   ];
 
