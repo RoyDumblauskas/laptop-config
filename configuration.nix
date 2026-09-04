@@ -84,6 +84,9 @@
         "d fam google" = {
           pskRaw = "ext:home";
         };
+        "PumpingStationOne" = {
+          pskRaw = "ext:PumpingStationOne";
+        };
       };
     };
 
