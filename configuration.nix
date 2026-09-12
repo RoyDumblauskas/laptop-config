@@ -224,10 +224,16 @@
   virtualisation.incus.enable = true;
 
   # Open ports in the firewall.
+  # Trust incus interface for VM stuff
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  networking.firewall.enable = true;
-  networking.nftables.enable = true;
+  networking = {
+    firewall = {
+      enable = true;
+      trustedInterfaces = [ "incusbr0" ];
+    };
+    nftable.enable = true;
+  };
 
   # INITIAL system version
   system.stateVersion = "24.11";
