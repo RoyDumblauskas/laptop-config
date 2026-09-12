@@ -128,6 +128,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "incus-admin"
     ];
     shell = pkgs.fish;
   };
