@@ -232,7 +232,7 @@
       enable = true;
       trustedInterfaces = [ "incusbr0" ];
     };
-    nftable.enable = true;
+    nftables.enable = true;
   };
 
   # INITIAL system version
