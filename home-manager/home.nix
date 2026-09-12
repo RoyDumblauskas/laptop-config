@@ -56,6 +56,8 @@
       ".local/share/Steam"
       # persist spotify login
       ".config/spotify"
+      # persist discord login
+      ".config/discord"
       # Minecraft (long download times)
       ".local/share/PrismLauncher/instances"
       ".local/share/PrismLauncher/assets"
