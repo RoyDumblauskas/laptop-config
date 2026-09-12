@@ -221,10 +221,13 @@
     ];
   };
 
+  virtualisation.incus.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.enable = true;
+  networking.nftables.enable = true;
 
   # INITIAL system version
   system.stateVersion = "24.11";
