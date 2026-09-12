@@ -36,6 +36,9 @@
       "/var/db/sudo/lectured"
       "/var/lib/nixos"
     ];
+    files = [
+      "/etc/machine-id"
+    ];
   };
 
   # SOPS config
