@@ -22,6 +22,20 @@
         options.desc = "Toggle Neotree";
       }
       {
+        action = "<cmd>belowright split | terminal<CR><cmd>startinsert<CR>";
+        key = "<leader>/";
+        mode = [ "n" ];
+        options.silent = true;
+        options.desc = "Open Term";
+      }
+      {
+        action = "<C-\\><C-n>";
+        key = "<leader>/";
+        mode = [ "t" ];
+        options.silent = true;
+        options.desc = "Open Term";
+      }
+      {
         action = "<C-w>h";
         key = "<leader>h";
         mode = [ "n" ];
